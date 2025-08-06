@@ -71,15 +71,15 @@ export function ServicesOverview() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-4">
-            Comprehensive Nutrition Services
+            How I Help You Win at Food
           </h2>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto mb-8">
-            From weight management to medical nutrition therapy, I offer specialized services 
-            to meet your unique health and wellness needs.
+            Because life's too short for boring diets and food rules that don't work. 
+            Let's make nutrition simple, sustainable, and actually enjoyable.
           </p>
           <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-sm">
-            <span className="text-sm text-charcoal-600 mr-2">All consultations include:</span>
-            <span className="text-sm font-medium text-sage-600">Personalized meal plans • Ongoing support • Progress tracking</span>
+            <span className="text-sm text-charcoal-600 mr-2">Every package includes:</span>
+            <span className="text-sm font-medium text-terracotta-600">Real-life meal plans • Text support • No judgment zone</span>
           </div>
         </div>
 

@@ -131,12 +131,12 @@ export function Services() {
       <section className="py-16 lg:py-24 bg-gradient-to-br from-sage-50 to-coral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-inter font-bold text-charcoal-900 mb-6">
-            Comprehensive Nutrition Services
+            Nutrition That Actually Works
           </h1>
           <p className="text-xl text-charcoal-600 leading-relaxed mb-8">
-            Personalized nutrition counseling tailored to your unique health needs, 
-            lifestyle, and goals. From weight management to medical nutrition therapy, 
-            I'm here to support your journey to optimal health.
+            Forget everything you think you know about "dieting." I'm here to help you 
+            build a sustainable, enjoyable relationship with food that gets you results 
+            without the misery.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="bg-white rounded-full px-6 py-3 shadow-sm">
@@ -211,26 +211,7 @@ export function Services() {
                         </ul>
                       </div>
 
-                      {/* Pricing */}
-                      <div className={`${colors.bg} rounded-xl p-6 mb-8`}>
-                        <h3 className="text-lg font-inter font-semibold text-charcoal-900 mb-4">
-                          Investment in Your Health:
-                        </h3>
-                        <div className="space-y-3">
-                          <div className="flex justify-between items-center">
-                            <span className="text-charcoal-600">{service.pricing.initial.session}</span>
-                            <span className={`font-bold ${colors.text}`}>{service.pricing.initial.price}</span>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-charcoal-600">{service.pricing.followUp.session}</span>
-                            <span className={`font-bold ${colors.text}`}>{service.pricing.followUp.price}</span>
-                          </div>
-                          <div className={`flex justify-between items-center bg-white rounded-lg p-3 border-2 ${colors.border}`}>
-                            <span className="font-medium text-charcoal-800">{service.pricing.package.session}</span>
-                            <span className={`font-bold text-lg ${colors.text}`}>{service.pricing.package.price}</span>
-                          </div>
-                        </div>
-                      </div>
+
 
                       {/* CTA */}
                       <div className="flex flex-col sm:flex-row gap-4">

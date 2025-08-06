@@ -7,6 +7,7 @@ import { About } from './components/pages/About';
 import { Services } from './components/pages/Services';
 import { Testimonials } from './components/pages/Testimonials';
 import { Blog } from './components/pages/Blog';
+import { ArticlePage } from './components/pages/ArticlePage';
 import { Contact } from './components/pages/Contact';
 import { BookingPage } from './components/pages/BookingPage';
 import { AdminDashboard } from './components/pages/AdminDashboard';
@@ -15,7 +16,7 @@ import { ScrollToTop } from './components/ui/ScrollToTop';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-ivory-200 font-opensans">
+      <div className="min-h-screen bg-ivory-200 font-poppins">
         <ScrollToTop />
         <Header />
         <main className="flex-1">
@@ -25,6 +26,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/resources" element={<Blog />} />
+            <Route path="/resources/:id" element={<ArticlePage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/book-consultation" element={<BookingPage />} />
             <Route path="/admin" element={<AdminDashboard />} />

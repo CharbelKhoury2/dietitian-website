@@ -21,9 +21,9 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', href: 'https://instagram.com/sarahchenrd', icon: Instagram },
-    { name: 'LinkedIn', href: 'https://linkedin.com/in/sarahchenrd', icon: Linkedin },
-    { name: 'Facebook', href: 'https://facebook.com/sarahchenrd', icon: Facebook },
+    { name: 'Instagram', href: 'https://instagram.com/dr.myriam.nutrition', icon: Instagram },
+    { name: 'LinkedIn', href: 'https://linkedin.com/in/dr-myriam-nutrition', icon: Linkedin },
+    { name: 'Facebook', href: 'https://facebook.com/dr.myriam.nutrition', icon: Facebook },
   ];
 
   return (
@@ -34,18 +34,18 @@ export function Footer() {
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-sage-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SC</span>
+                <span className="text-white font-bold text-lg">DM</span>
               </div>
               <div>
-                <span className="text-xl font-inter font-bold">Sarah Chen</span>
-                <span className="text-sm text-gray-300 block leading-tight">
-                  Registered Dietitian
+                <span className="text-xl font-poppins font-bold">Dr. Myriam</span>
+                <span className="text-sm text-terracotta-300 block leading-tight">
+                  Your No-BS Dietitian
                 </span>
               </div>
             </div>
             <p className="text-gray-300 text-sm mb-6">
-              Helping you achieve optimal health through personalized nutrition counseling 
-              and evidence-based dietary guidance.
+              Helping you ditch diet culture and build a healthy relationship with food 
+              that actually lasts. Real nutrition advice, zero judgment.
             </p>
             
             {/* Contact Info */}
@@ -55,25 +55,25 @@ export function Footer() {
                 className="flex items-center text-sm text-gray-300 hover:text-sage-400 transition-colors"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                (123) 456-7890
+                +1 (555) 123-4567
               </a>
               <a
-                href="mailto:hello@sarahchenrd.com"
+                href="mailto:info@drmyriam.com"
                 className="flex items-center text-sm text-gray-300 hover:text-sage-400 transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                hello@sarahchenrd.com
+                info@drmyriam.com
               </a>
               <div className="flex items-center text-sm text-gray-300">
                 <MapPin className="w-4 h-4 mr-2" />
-                San Francisco, CA
+                Dubai, UAE
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-inter font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-poppins font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -106,7 +106,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-inter font-semibold text-lg mb-4">Services</h3>
+            <h3 className="font-poppins font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.name}>
@@ -123,7 +123,7 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-inter font-semibold text-lg mb-4">Stay Updated</h3>
+            <h3 className="font-poppins font-semibold text-lg mb-4">Stay Updated</h3>
             <p className="text-gray-300 text-sm mb-4">
               Get weekly nutrition tips and recipes delivered to your inbox.
             </p>
@@ -152,7 +152,7 @@ export function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Sarah Chen, RD. All rights reserved.
+              © {currentYear} Dr. Myriam. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link

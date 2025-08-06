@@ -42,11 +42,11 @@ export function Header() {
               <span className="text-white font-bold text-lg">SC</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-inter font-bold text-charcoal-900">
-                Sarah Chen
+              <span className="text-xl font-poppins font-bold text-charcoal-900">
+                Dr. Myriam
               </span>
-              <span className="text-sm text-sage-600 block leading-tight">
-                Registered Dietitian
+              <span className="text-sm text-terracotta-600 block leading-tight">
+                Your No-BS Dietitian
               </span>
             </div>
           </Link>

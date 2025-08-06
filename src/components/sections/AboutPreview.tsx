@@ -17,8 +17,8 @@ export function AboutPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="animate-fade-in">
-            <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-6">
-              Meet Sarah Chen, Your Trusted Nutrition Partner
+            <h2 className="text-3xl font-inter font-bold text-charcoal-900 mb-4">
+              Meet Myriam, Your Trusted Nutrition Partner
             </h2>
             
             <p className="text-lg text-charcoal-600 leading-relaxed mb-6">
@@ -66,7 +66,7 @@ export function AboutPreview() {
             <div className="relative">
               <img
                 src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
-                alt="Sarah Chen working with nutrition plans and fresh vegetables"
+                alt="Myriam working with nutrition plans and fresh vegetables"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />
               
