@@ -130,7 +130,7 @@ export function Services() {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-sage-50 to-coral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-inter font-bold text-charcoal-900 mb-6">
+          <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 mb-6">
             Nutrition That Actually Works
           </h1>
           <p className="text-xl text-charcoal-600 leading-relaxed mb-8">
@@ -183,7 +183,7 @@ export function Services() {
                           <Icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900">
+                          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900">
                             {service.title}
                           </h2>
                           <p className={`text-lg ${colors.text} font-medium`}>
@@ -198,7 +198,7 @@ export function Services() {
 
                       {/* Features */}
                       <div className="mb-8">
-                        <h3 className="text-lg font-inter font-semibold text-charcoal-900 mb-4">
+                        <h3 className="text-lg font-poppins font-semibold text-charcoal-900 mb-4">
                           What's Included:
                         </h3>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -243,7 +243,7 @@ export function Services() {
       {/* FAQ Section */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-12 text-center">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-12 text-center">
             Frequently Asked Questions
           </h2>
           
@@ -271,7 +271,7 @@ export function Services() {
               }
             ].map((faq, index) => (
               <div key={index} className="bg-ivory-50 rounded-xl p-6">
-                <h3 className="text-lg font-inter font-semibold text-charcoal-900 mb-3">
+                <h3 className="text-lg font-poppins font-semibold text-charcoal-900 mb-3">
                   {faq.question}
                 </h3>
                 <p className="text-charcoal-600 leading-relaxed">
@@ -286,7 +286,7 @@ export function Services() {
       {/* CTA Section */}
       <section className="py-16 lg:py-20 bg-gradient-to-br from-sage-600 to-sage-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold mb-6">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold mb-6">
             Ready to Start Your Health Journey?
           </h2>
           <p className="text-xl text-sage-100 mb-8">

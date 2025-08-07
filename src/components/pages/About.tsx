@@ -113,7 +113,7 @@ export function About() {
 
           <div className="mt-8 space-y-4">
             <div className="flex items-center justify-center space-x-4 text-charcoal-600">
-              <span className="text-sm">📱 +961 33 455 31</span>
+              <span className="text-sm">📱 +961 03 345 531</span>
               <span className="text-sm">|</span>
               <span className="text-sm">📧 myriam_nutritips</span>
             </div>
@@ -239,7 +239,7 @@ export function About() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-inter font-bold text-charcoal-900 mb-2">
+                    <h3 className="text-lg font-poppins font-bold text-charcoal-900 mb-2">
                       {credential.title}
                     </h3>
                     <p className="text-sage-600 font-medium mb-1">
@@ -271,7 +271,7 @@ export function About() {
               <div key={index} className="bg-white rounded-xl p-8 shadow-sm">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-inter font-bold text-charcoal-900 mb-2">
+                    <h3 className="text-xl font-poppins font-bold text-charcoal-900 mb-2">
                       {job.title}
                     </h3>
                     <p className="text-sage-600 font-medium">
@@ -368,7 +368,7 @@ export function About() {
                   <span className="text-coral-600 font-bold text-sm">1</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-inter font-bold text-charcoal-900 mb-2">
+                  <h3 className="text-lg font-poppins font-bold text-charcoal-900 mb-2">
                     No Last-Minute Cancellations
                   </h3>
                   <p className="text-charcoal-600">
@@ -382,7 +382,7 @@ export function About() {
                   <span className="text-coral-600 font-bold text-sm">2</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-inter font-bold text-charcoal-900 mb-2">
+                  <h3 className="text-lg font-poppins font-bold text-charcoal-900 mb-2">
                     Appointment Postponement Policy
                   </h3>
                   <p className="text-charcoal-600">
@@ -396,7 +396,7 @@ export function About() {
                   <span className="text-coral-600 font-bold text-sm">3</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-inter font-bold text-charcoal-900 mb-2">
+                  <h3 className="text-lg font-poppins font-bold text-charcoal-900 mb-2">
                     WhatsApp Service Guidelines
                   </h3>
                   <p className="text-charcoal-600 mb-3">

@@ -70,7 +70,7 @@ export function ServicesOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-4">
             How I Help You Win at Food
           </h2>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto mb-8">
@@ -109,7 +109,7 @@ export function ServicesOverview() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-inter font-bold text-charcoal-900 mb-3">
+                <h3 className="text-2xl font-poppins font-bold text-charcoal-900 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-charcoal-600 mb-6 leading-relaxed">
@@ -144,7 +144,7 @@ export function ServicesOverview() {
         {/* Bottom CTA */}
         <div className="text-center">
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-sage-200">
-            <h3 className="text-2xl font-inter font-bold text-charcoal-900 mb-4">
+            <h3 className="text-2xl font-poppins font-bold text-charcoal-900 mb-4">
               Not sure which service is right for you?
             </h3>
             <p className="text-charcoal-600 mb-6">

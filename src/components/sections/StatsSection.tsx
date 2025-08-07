@@ -49,7 +49,7 @@ export function StatsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-4">
             Proven Results You Can Trust
           </h2>
           <p className="text-lg text-charcoal-600 max-w-2xl mx-auto">
@@ -72,7 +72,7 @@ export function StatsSection() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-sm mb-4 group-hover:shadow-md transition-shadow">
                   <Icon className={`w-8 h-8 ${colorClass}`} />
                 </div>
-                <div className="text-4xl font-inter font-bold text-charcoal-900 mb-2">
+                <div className="text-4xl font-poppins font-bold text-charcoal-900 mb-2">
                   {stat.value}
                 </div>
                 <div className="text-lg font-medium text-charcoal-800 mb-1">

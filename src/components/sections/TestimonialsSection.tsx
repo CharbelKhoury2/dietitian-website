@@ -34,7 +34,7 @@ export function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-4">
             Real Results from Real People
           </h2>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
@@ -83,7 +83,7 @@ export function TestimonialsSection() {
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-inter font-semibold text-charcoal-900">
+                  <h4 className="font-poppins font-semibold text-charcoal-900">
                     {testimonial.name}
                   </h4>
                   <p className="text-sm text-charcoal-600">{testimonial.role}</p>
@@ -97,19 +97,19 @@ export function TestimonialsSection() {
         <div className="mt-16 bg-sage-50 rounded-2xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-inter font-bold text-sage-700 mb-2">500+</div>
+              <div className="text-3xl font-poppins font-bold text-sage-700 mb-2">500+</div>
               <div className="text-sm text-charcoal-600">Clients Served</div>
             </div>
             <div>
-              <div className="text-3xl font-inter font-bold text-sage-700 mb-2">95%</div>
+              <div className="text-3xl font-poppins font-bold text-sage-700 mb-2">95%</div>
               <div className="text-sm text-charcoal-600">Success Rate</div>
             </div>
             <div>
-              <div className="text-3xl font-inter font-bold text-sage-700 mb-2">4.9</div>
+              <div className="text-3xl font-poppins font-bold text-sage-700 mb-2">4.9</div>
               <div className="text-sm text-charcoal-600">Average Rating</div>
             </div>
             <div>
-              <div className="text-3xl font-inter font-bold text-sage-700 mb-2">127</div>
+              <div className="text-3xl font-poppins font-bold text-sage-700 mb-2">127</div>
               <div className="text-sm text-charcoal-600">5-Star Reviews</div>
             </div>
           </div>

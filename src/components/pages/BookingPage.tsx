@@ -90,7 +90,7 @@ export function BookingPage() {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-sage-50 to-coral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-inter font-bold text-charcoal-900 mb-6">
+          <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 mb-6">
             Book Your Consultation
           </h1>
           <p className="text-xl text-charcoal-600 leading-relaxed mb-8">
@@ -122,7 +122,7 @@ export function BookingPage() {
             <div className="p-8 lg:p-12">
               {/* Step 1: Service Selection */}
               <div className="mb-12">
-                <h2 className="text-2xl font-inter font-bold text-charcoal-900 mb-6 flex items-center">
+                <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
                   <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
                     1
                   </div>
@@ -141,7 +141,7 @@ export function BookingPage() {
                       onClick={() => setSelectedService(service.id)}
                     >
                       <div className="flex justify-between items-start mb-3">
-                        <h3 className="font-inter font-semibold text-charcoal-900">
+                        <h3 className="font-poppins font-semibold text-charcoal-900">
                           {service.name}
                         </h3>
                         <div className="text-right">
@@ -171,7 +171,7 @@ export function BookingPage() {
               {/* Step 2: Appointment Type (if applicable) */}
               {selectedService && selectedServiceInfo?.type !== 'virtual-only' && (
                 <div className="mb-12">
-                  <h2 className="text-2xl font-inter font-bold text-charcoal-900 mb-6 flex items-center">
+                  <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
                     <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
                       2
                     </div>
@@ -189,7 +189,7 @@ export function BookingPage() {
                     >
                       <div className="flex items-center mb-3">
                         <Video className="w-6 h-6 text-sage-600 mr-3" />
-                        <h3 className="font-inter font-semibold text-charcoal-900">
+                        <h3 className="font-poppins font-semibold text-charcoal-900">
                           Virtual Consultation
                         </h3>
                         {appointmentType === 'virtual' && (
@@ -211,7 +211,7 @@ export function BookingPage() {
                     >
                       <div className="flex items-center mb-3">
                         <MapPin className="w-6 h-6 text-sage-600 mr-3" />
-                        <h3 className="font-inter font-semibold text-charcoal-900">
+                        <h3 className="font-poppins font-semibold text-charcoal-900">
                           In-Person Visit
                         </h3>
                         {appointmentType === 'in-person' && (
@@ -229,7 +229,7 @@ export function BookingPage() {
               {/* Step 3: Date Selection */}
               {selectedService && (
                 <div className="mb-12">
-                  <h2 className="text-2xl font-inter font-bold text-charcoal-900 mb-6 flex items-center">
+                  <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
                     <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
                       {selectedServiceInfo?.type === 'virtual-only' ? '2' : '3'}
                     </div>
@@ -265,7 +265,7 @@ export function BookingPage() {
               {/* Step 4: Time Selection */}
               {selectedService && selectedDate && (
                 <div className="mb-12">
-                  <h2 className="text-2xl font-inter font-bold text-charcoal-900 mb-6 flex items-center">
+                  <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
                     <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
                       {selectedServiceInfo?.type === 'virtual-only' ? '3' : '4'}
                     </div>
@@ -296,7 +296,7 @@ export function BookingPage() {
               {/* Booking Summary & CTA */}
               {selectedService && selectedDate && selectedTime && (
                 <div className="bg-sage-50 rounded-xl p-6 mb-8">
-                  <h3 className="text-xl font-inter font-bold text-charcoal-900 mb-4">
+                  <h3 className="text-xl font-poppins font-bold text-charcoal-900 mb-4">
                     Booking Summary
                   </h3>
                   
@@ -350,11 +350,11 @@ export function BookingPage() {
                   variant="outline"
                   size="lg"
                   as="a"
-                  href="tel:+1234567890"
+                  href="tel:+96103345531"
                   className="flex items-center justify-center"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call to Book: (123) 456-7890
+                  Call to Book: +961 03 345 531
                 </Button>
               </div>
             </div>
@@ -362,7 +362,7 @@ export function BookingPage() {
 
           {/* Additional Info */}
           <div className="mt-12 bg-white rounded-xl p-6 shadow-sm">
-            <h3 className="font-inter font-bold text-charcoal-900 mb-4">
+            <h3 className="font-poppins font-bold text-charcoal-900 mb-4">
               What to Expect
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">

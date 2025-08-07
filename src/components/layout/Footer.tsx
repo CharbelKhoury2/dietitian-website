@@ -21,7 +21,7 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', href: 'https://instagram.com/dr.myriam.nutrition', icon: Instagram },
+    { name: 'Instagram', href: 'https://www.instagram.com/myriam_nutritips', icon: Instagram },
     { name: 'LinkedIn', href: 'https://linkedin.com/in/dr-myriam-nutrition', icon: Linkedin },
     { name: 'Facebook', href: 'https://facebook.com/dr.myriam.nutrition', icon: Facebook },
   ];
@@ -33,13 +33,13 @@ export function Footer() {
           {/* Company Info */}
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-sage-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">DM</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                <img src="/profile-logo.svg" alt="Dr. Myriam" className="w-full h-full object-cover" />
               </div>
               <div>
                 <span className="text-xl font-poppins font-bold">Dr. Myriam</span>
                 <span className="text-sm text-coral-300 block leading-tight">
-                  Your No-BS Dietitian
+                  Nutrition Made Simple
                 </span>
               </div>
             </div>
@@ -51,22 +51,22 @@ export function Footer() {
             {/* Contact Info */}
             <div className="space-y-2">
               <a
-                href="tel:+1234567890"
+                href="tel:+96133455331"
                 className="flex items-center text-sm text-gray-300 hover:text-sage-400 transition-colors"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                +1 (555) 123-4567
+                +961 03 345 531
               </a>
               <a
-                href="mailto:info@drmyriam.com"
+                href="mailto:myriam.nutritips@gmail.com"
                 className="flex items-center text-sm text-gray-300 hover:text-sage-400 transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                info@drmyriam.com
+                myriam.nutritips@gmail.com
               </a>
               <div className="flex items-center text-sm text-gray-300">
                 <MapPin className="w-4 h-4 mr-2" />
-                Dubai, UAE
+                Lebanon
               </div>
             </div>
           </div>

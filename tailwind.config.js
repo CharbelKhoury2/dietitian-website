@@ -102,6 +102,7 @@ export default {
         }
       },
       fontFamily: {
+        'sans': ['Poppins', 'sans-serif'], // Set Poppins as default sans-serif
         'poppins': ['Poppins', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'], // Legacy support
         'opensans': ['Open Sans', 'sans-serif'], // Legacy support

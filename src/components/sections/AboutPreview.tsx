@@ -17,7 +17,7 @@ export function AboutPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="animate-fade-in">
-            <h2 className="text-3xl font-inter font-bold text-charcoal-900 mb-4">
+            <h2 className="text-3xl font-poppins font-bold text-charcoal-900 mb-4">
               Meet Myriam, Your Trusted Nutrition Partner
             </h2>
             

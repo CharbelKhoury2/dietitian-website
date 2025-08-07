@@ -92,7 +92,7 @@ export function Testimonials() {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-sage-50 to-coral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-inter font-bold text-charcoal-900 mb-6">
+          <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 mb-6">
             Success Stories & Testimonials
           </h1>
           <p className="text-xl text-charcoal-600 leading-relaxed mb-8">
@@ -107,7 +107,7 @@ export function Testimonials() {
               return (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
                   <Icon className="w-8 h-8 text-sage-600 mx-auto mb-3" />
-                  <div className="text-2xl font-inter font-bold text-charcoal-900 mb-1">
+                  <div className="text-2xl font-poppins font-bold text-charcoal-900 mb-1">
                     {stat.value}
                   </div>
                   <div className="text-sm text-charcoal-600">{stat.label}</div>
@@ -121,7 +121,7 @@ export function Testimonials() {
       {/* Featured Success Stories */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-12 text-center">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-12 text-center">
             Featured Success Stories
           </h2>
           
@@ -183,7 +183,7 @@ export function Testimonials() {
                           </span>
                         </div>
                         <div>
-                          <h4 className="font-inter font-bold text-charcoal-900 text-lg">
+                          <h4 className="font-poppins font-bold text-charcoal-900 text-lg">
                             {testimonial.name}
                           </h4>
                           <p className="text-sage-600 font-medium">
@@ -203,7 +203,7 @@ export function Testimonials() {
       {/* Additional Testimonials Grid */}
       <section className="py-16 lg:py-20 bg-ivory-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-12 text-center">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-12 text-center">
             More Client Success Stories
           </h2>
           
@@ -231,7 +231,7 @@ export function Testimonials() {
 
                 {/* Author */}
                 <div className="border-t pt-4">
-                  <h4 className="font-inter font-semibold text-charcoal-900">
+                  <h4 className="font-poppins font-semibold text-charcoal-900">
                     {testimonial.name}
                   </h4>
                   <p className="text-sm text-charcoal-600">{testimonial.role}</p>
@@ -245,7 +245,7 @@ export function Testimonials() {
       {/* Video Testimonials Section */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-12">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-12">
             Video Success Stories
           </h2>
           
@@ -287,7 +287,7 @@ export function Testimonials() {
                 </div>
                 
                 <div className="mt-4">
-                  <h3 className="font-inter font-semibold text-charcoal-900">{video.name}</h3>
+                  <h3 className="font-poppins font-semibold text-charcoal-900">{video.name}</h3>
                   <p className="text-charcoal-600">{video.title}</p>
                 </div>
               </div>
@@ -299,7 +299,7 @@ export function Testimonials() {
       {/* Review Summary */}
       <section className="py-16 lg:py-20 bg-sage-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-8">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-8">
             What Clients Say About Working With Me
           </h2>
           

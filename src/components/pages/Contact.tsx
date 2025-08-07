@@ -37,7 +37,7 @@ export function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      details: '(123) 456-7890',
+      details: '+961 03 345 531',
       subtitle: 'Monday - Friday, 9am - 6pm PST'
     },
     {
@@ -75,7 +75,7 @@ export function Contact() {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-sage-50 to-coral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-inter font-bold text-charcoal-900 mb-6">
+          <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 mb-6">
             Get in Touch
           </h1>
           <p className="text-xl text-charcoal-600 leading-relaxed mb-8">
@@ -95,13 +95,13 @@ export function Contact() {
             </Button>
             <Button
               as="a"
-              href="tel:+1234567890"
+              href="tel:+96103345531"
               variant="outline"
               size="lg"
               className="inline-flex items-center"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call Now: (123) 456-7890
+              Call Now: +961 03 345 531
             </Button>
           </div>
         </div>
@@ -113,7 +113,7 @@ export function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="animate-fade-in">
-              <h2 className="text-3xl font-inter font-bold text-charcoal-900 mb-6">
+              <h2 className="text-3xl font-poppins font-bold text-charcoal-900 mb-6">
                 Send Me a Message
               </h2>
               <p className="text-charcoal-600 mb-8">
@@ -124,7 +124,7 @@ export function Contact() {
               {isSubmitted ? (
                 <div className="bg-sage-50 border border-sage-200 rounded-xl p-8 text-center">
                   <CheckCircle className="w-12 h-12 text-sage-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-inter font-bold text-charcoal-900 mb-2">
+                  <h3 className="text-xl font-poppins font-bold text-charcoal-900 mb-2">
                     Message Sent Successfully!
                   </h3>
                   <p className="text-charcoal-600 mb-6">
@@ -305,7 +305,7 @@ export function Contact() {
 
             {/* Contact Details */}
             <div className="animate-slide-up">
-              <h2 className="text-3xl font-inter font-bold text-charcoal-900 mb-6">
+              <h2 className="text-3xl font-poppins font-bold text-charcoal-900 mb-6">
                 Contact Information
               </h2>
               
@@ -320,7 +320,7 @@ export function Contact() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-inter font-semibold text-charcoal-900 mb-1">
+                        <h3 className="font-poppins font-semibold text-charcoal-900 mb-1">
                           {info.title}
                         </h3>
                         <p className="text-lg text-charcoal-700 mb-1">{info.details}</p>
@@ -335,7 +335,7 @@ export function Contact() {
               <div className="bg-ivory-50 rounded-xl p-6 mb-8">
                 <div className="flex items-center mb-4">
                   <Clock className="w-6 h-6 text-sage-600 mr-3" />
-                  <h3 className="text-xl font-inter font-bold text-charcoal-900">
+                  <h3 className="text-xl font-poppins font-bold text-charcoal-900">
                     Office Hours
                   </h3>
                 </div>
@@ -351,7 +351,7 @@ export function Contact() {
 
               {/* Insurance & Payment */}
               <div className="bg-sage-50 rounded-xl p-6">
-                <h3 className="text-xl font-inter font-bold text-charcoal-900 mb-4">
+                <h3 className="text-xl font-poppins font-bold text-charcoal-900 mb-4">
                   Insurance & Payment
                 </h3>
                 <div className="space-y-2">
@@ -382,7 +382,7 @@ export function Contact() {
       <section className="py-16 lg:py-20 bg-ivory-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-4">
               Visit My Office
             </h2>
             <p className="text-lg text-charcoal-600">
@@ -395,7 +395,7 @@ export function Contact() {
               <div className="w-full h-96 bg-sage-100 rounded-xl flex items-center justify-center">
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-sage-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-inter font-bold text-charcoal-900 mb-2">
+                  <h3 className="text-xl font-poppins font-bold text-charcoal-900 mb-2">
                     Interactive Map
                   </h3>
                   <p className="text-charcoal-600">

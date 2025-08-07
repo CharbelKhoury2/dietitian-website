@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Calendar } from 'lucide-react';
 import { Button } from '../ui/Button';
 
@@ -7,6 +7,18 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      // If already on homepage, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // If on different page, navigate to homepage
+      navigate('/');
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,19 +49,19 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-sage-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">SC</span>
+          <a href="/" onClick={handleLogoClick} className="flex items-center space-x-2 cursor-pointer">
+            <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+              <img src="/profile-logo.svg" alt="Dr. Myriam" className="w-full h-full object-cover" />
             </div>
             <div className="hidden sm:block">
               <span className="text-xl font-poppins font-bold text-charcoal-900">
                 Dr. Myriam
               </span>
               <span className="text-sm text-coral-600 block leading-tight">
-                Your No-BS Dietitian
+                Nutrition Made Simple
               </span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -71,11 +83,11 @@ export function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:+1234567890"
+              href="tel:+96103345531"
               className="flex items-center text-sm text-charcoal-600 hover:text-sage-600 transition-colors"
             >
               <Phone className="w-4 h-4 mr-2" />
-              (123) 456-7890
+              +961 03 345 531
             </a>
             <Button
               as={Link}
@@ -117,11 +129,11 @@ export function Header() {
               ))}
               <div className="px-3 py-2 space-y-2">
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+96103345531"
                   className="flex items-center text-sm text-charcoal-600 hover:text-sage-600 transition-colors"
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  (123) 456-7890
+                  +961 03 345 531
                 </a>
                 <Button
                   as={Link}

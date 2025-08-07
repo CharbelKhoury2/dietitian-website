@@ -11,6 +11,8 @@ import { ArticlePage } from './components/pages/ArticlePage';
 import { Contact } from './components/pages/Contact';
 import { BookingPage } from './components/pages/BookingPage';
 import { AdminDashboard } from './components/pages/AdminDashboard';
+import { PrivacyPolicy } from './components/pages/PrivacyPolicy';
+import { TermsOfService } from './components/pages/TermsOfService';
 import { ScrollToTop } from './components/ui/ScrollToTop';
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/book-consultation" element={<BookingPage />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </main>
         <Footer />

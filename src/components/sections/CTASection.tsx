@@ -9,7 +9,7 @@ export function CTASection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Content */}
         <div className="animate-fade-in">
-          <h2 className="text-3xl lg:text-5xl font-inter font-bold mb-6">
+          <h2 className="text-3xl lg:text-5xl font-poppins font-bold mb-6">
             Ready to Transform Your Health?
           </h2>
           <p className="text-xl lg:text-2xl text-sage-100 mb-8 leading-relaxed">
@@ -50,13 +50,13 @@ export function CTASection() {
             </Button>
             <Button
               as="a"
-              href="tel:+1234567890"
+              href="tel:+96103345531"
               variant="outline"
               size="xl"
               className="border-white text-white hover:bg-white hover:text-sage-700"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call Now: (123) 456-7890
+              Call Now: +961 03 345 531
             </Button>
           </div>
 

@@ -53,7 +53,7 @@ export function ValuePropositions() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-inter font-bold text-charcoal-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-charcoal-900 mb-4">
             Why Choose Professional Nutrition Counseling?
           </h2>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
@@ -81,7 +81,7 @@ export function ValuePropositions() {
                   </div>
                   
                   {/* Title */}
-                  <h3 className={`text-2xl font-inter font-bold ${colors.title} mb-4`}>
+                  <h3 className={`text-2xl font-poppins font-bold ${colors.title} mb-4`}>
                     {prop.title}
                   </h3>
                   

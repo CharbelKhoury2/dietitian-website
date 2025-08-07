@@ -69,7 +69,7 @@ export function AdminDashboard() {
         {/* Recent Clients */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-sage-100">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-lg font-inter font-semibold text-charcoal-900">Recent Clients</h3>
+            <h3 className="text-lg font-poppins font-semibold text-charcoal-900">Recent Clients</h3>
             <Button variant="ghost" size="sm">View All</Button>
           </div>
           <div className="space-y-4">
@@ -95,7 +95,7 @@ export function AdminDashboard() {
         {/* Upcoming Appointments */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-sage-100">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-lg font-inter font-semibold text-charcoal-900">Upcoming Appointments</h3>
+            <h3 className="text-lg font-poppins font-semibold text-charcoal-900">Upcoming Appointments</h3>
             <Button variant="ghost" size="sm">View Calendar</Button>
           </div>
           <div className="space-y-4">
@@ -120,7 +120,7 @@ export function AdminDashboard() {
   const renderContent = () => (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-inter font-bold text-charcoal-900">Content Management</h2>
+        <h2 className="text-2xl font-poppins font-bold text-charcoal-900">Content Management</h2>
         <Button className="flex items-center">
           <Plus className="w-4 h-4 mr-2" />
           New Post
@@ -129,7 +129,7 @@ export function AdminDashboard() {
 
       <div className="bg-white rounded-xl shadow-sm border border-sage-100 overflow-hidden">
         <div className="px-6 py-4 border-b border-sage-100">
-          <h3 className="font-inter font-semibold text-charcoal-900">Blog Posts</h3>
+          <h3 className="font-poppins font-semibold text-charcoal-900">Blog Posts</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -244,7 +244,7 @@ export function AdminDashboard() {
       <div className="bg-white border-b border-sage-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-inter font-bold text-charcoal-900">
+            <h1 className="text-2xl font-poppins font-bold text-charcoal-900">
               Admin Dashboard
             </h1>
             <div className="flex items-center space-x-4">
