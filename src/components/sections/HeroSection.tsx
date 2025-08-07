@@ -5,14 +5,14 @@ import { Button } from '../ui/Button';
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-cream-50 via-sage-50 to-terracotta-50">
+    <section className="relative overflow-hidden bg-gradient-to-br from-ivory-50 via-sage-50 to-coral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             {/* Social Proof Badge */}
-            <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-sm mb-6 border border-terracotta-100">
-              <div className="flex text-terracotta-500 mr-2">
+            <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-sm mb-6 border border-coral-100">
+              <div className="flex text-coral-500 mr-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
@@ -20,42 +20,42 @@ export function HeroSection() {
               <span className="text-sm text-charcoal-600 ml-2 font-medium">Trusted by 500+ clients</span>
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-inter font-bold text-charcoal-900 leading-tight mb-6">
-              Transform Your Relationship with Food with Dr. <span className="text-terracotta-600">Myriam</span>
+            <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 leading-tight mb-6">
+              Unlock Your Health Potential: Personalized Nutrition with Dr. <span className="text-coral-600">Myriam</span>
             </h1>
             
             <p className="text-xl text-charcoal-600 mb-8 leading-relaxed">
-              No fad diets. No restrictions. Just personalized nutrition guidance that fits your lifestyle. 
-              As a registered dietitian, I help you build a healthy relationship with food while achieving your goals.
+              Skip the diet drama and get real results. As your registered dietitian, I create personalized nutrition plans 
+              that actually work with your life - not against it. Transform your health without the overwhelm.
             </p>
 
             {/* Key Benefits - Instagram-style */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start">
-                <div className="w-6 h-6 bg-terracotta-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                <div className="w-6 h-6 bg-coral-500 rounded-full flex items-center justify-center mr-3 mt-1">
                   <span className="text-white text-xs font-bold">✓</span>
                 </div>
                 <div>
-                  <span className="text-charcoal-700 font-medium">Personalized nutrition plans</span>
-                  <p className="text-sm text-charcoal-500">Tailored to your lifestyle & preferences</p>
+                  <span className="text-charcoal-700 font-medium">Evidence-based nutrition that works</span>
+                  <p className="text-sm text-charcoal-500">No fads, just science-backed strategies</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-6 h-6 bg-terracotta-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                <div className="w-6 h-6 bg-coral-500 rounded-full flex items-center justify-center mr-3 mt-1">
                   <span className="text-white text-xs font-bold">✓</span>
                 </div>
                 <div>
-                  <span className="text-charcoal-700 font-medium">Virtual & in-person sessions</span>
-                  <p className="text-sm text-charcoal-500">Flexible scheduling that works for you</p>
+                  <span className="text-charcoal-700 font-medium">Flexible 80/20 approach</span>
+                  <p className="text-sm text-charcoal-500">Enjoy life while reaching your goals</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-6 h-6 bg-terracotta-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                <div className="w-6 h-6 bg-coral-500 rounded-full flex items-center justify-center mr-3 mt-1">
                   <span className="text-white text-xs font-bold">✓</span>
                 </div>
                 <div>
-                  <span className="text-charcoal-700 font-medium">Evidence-based guidance</span>
-                  <p className="text-sm text-charcoal-500">Science-backed, no BS approach</p>
+                  <span className="text-charcoal-700 font-medium">Virtual & in-person options</span>
+                  <p className="text-sm text-charcoal-500">Meet however works best for you</p>
                 </div>
               </div>
             </div>
@@ -66,33 +66,33 @@ export function HeroSection() {
                 as={Link}
                 to="/book-consultation"
                 size="lg"
-                className="bg-terracotta-600 text-white px-8 py-4 rounded-full font-poppins font-semibold hover:bg-terracotta-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-coral-600 text-white px-8 py-4 rounded-full font-poppins font-semibold hover:bg-coral-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Start Your Journey →
+                Book Free Discovery Call →
               </Button>
               <Button
                 as={Link}
                 to="/services"
                 variant="outline"
                 size="lg"
-                className="border-2 border-terracotta-200 text-terracotta-600 px-8 py-4 rounded-full font-poppins font-semibold hover:bg-terracotta-50 transition-all duration-300 hover:scale-105"
+                className="border-2 border-coral-200 text-coral-600 px-8 py-4 rounded-full font-poppins font-semibold hover:bg-coral-50 transition-all duration-300 hover:scale-105"
               >
-                Explore Services
+                View Services
               </Button>
             </div>
 
             {/* Social proof */}
             <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-terracotta-600">500+</div>
+                <div className="text-2xl font-bold text-coral-600">500+</div>
                 <div className="text-sm text-charcoal-500">Happy Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-terracotta-600">8+</div>
+                <div className="text-2xl font-bold text-coral-600">12+</div>
                 <div className="text-sm text-charcoal-500">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-terracotta-600">4.9★</div>
+                <div className="text-2xl font-bold text-coral-600">4.9★</div>
                 <div className="text-sm text-charcoal-500">Client Rating</div>
               </div>
             </div>
@@ -107,18 +107,18 @@ export function HeroSection() {
                 className="w-full h-auto object-cover"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-terracotta-900/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-coral-900/20 to-transparent"></div>
             </div>
             
             {/* Floating Instagram-style card */}
-            <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl border border-terracotta-100">
+            <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl border border-coral-100">
               <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-terracotta-400 to-terracotta-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">SC</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-coral-400 to-coral-600 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">DM</span>
                 </div>
                 <div>
                   <h3 className="font-poppins font-bold text-charcoal-900">Dr. Myriam</h3>
-                  <p className="text-terracotta-600 text-sm font-medium">Registered Dietitian</p>
+                  <p className="text-coral-600 text-sm font-medium">Registered Dietitian</p>
                   <p className="text-charcoal-500 text-xs">MS • Evidence-based nutrition</p>
                 </div>
               </div>
@@ -126,7 +126,7 @@ export function HeroSection() {
           </div>
 
           {/* Background Decoration - Modern */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-terracotta-100 via-cream-100 to-sage-100 rounded-3xl transform rotate-2 -z-10 opacity-30"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-coral-100 via-ivory-100 to-sage-100 rounded-3xl transform rotate-2 -z-10 opacity-30"></div>
         </div>
       </div>
     </section>

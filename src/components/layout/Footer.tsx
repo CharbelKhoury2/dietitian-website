@@ -38,7 +38,7 @@ export function Footer() {
               </div>
               <div>
                 <span className="text-xl font-poppins font-bold">Dr. Myriam</span>
-                <span className="text-sm text-terracotta-300 block leading-tight">
+                <span className="text-sm text-coral-300 block leading-tight">
                   Your No-BS Dietitian
                 </span>
               </div>

@@ -118,13 +118,13 @@ export function About() {
               <span className="text-sm">📧 myriam_nutritips</span>
             </div>
             <div className="flex justify-center space-x-4">
-              <a href="https://www.instagram.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-terracotta-600 hover:text-terracotta-700 font-medium">
+              <a href="https://www.instagram.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
                 Instagram: @myriam_nutritips
               </a>
-              <a href="https://www.facebook.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-terracotta-600 hover:text-terracotta-700 font-medium">
+              <a href="https://www.facebook.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
                 Facebook: Myriam_nutritips
               </a>
-              <a href="https://tr.ee/3Mi4CjGZQ7" target="_blank" rel="noopener noreferrer" className="text-terracotta-600 hover:text-terracotta-700 font-medium">
+              <a href="https://tr.ee/3Mi4CjGZQ7" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
                 📍 Google Maps Location
               </a>
             </div>
@@ -364,8 +364,8 @@ export function About() {
             
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-terracotta-100 rounded-full flex items-center justify-center">
-                  <span className="text-terracotta-600 font-bold text-sm">1</span>
+                <div className="flex-shrink-0 w-8 h-8 bg-coral-100 rounded-full flex items-center justify-center">
+                  <span className="text-coral-600 font-bold text-sm">1</span>
                 </div>
                 <div>
                   <h3 className="text-lg font-inter font-bold text-charcoal-900 mb-2">
@@ -378,8 +378,8 @@ export function About() {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-terracotta-100 rounded-full flex items-center justify-center">
-                  <span className="text-terracotta-600 font-bold text-sm">2</span>
+                <div className="flex-shrink-0 w-8 h-8 bg-coral-100 rounded-full flex items-center justify-center">
+                  <span className="text-coral-600 font-bold text-sm">2</span>
                 </div>
                 <div>
                   <h3 className="text-lg font-inter font-bold text-charcoal-900 mb-2">
@@ -392,8 +392,8 @@ export function About() {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-terracotta-100 rounded-full flex items-center justify-center">
-                  <span className="text-terracotta-600 font-bold text-sm">3</span>
+                <div className="flex-shrink-0 w-8 h-8 bg-coral-100 rounded-full flex items-center justify-center">
+                  <span className="text-coral-600 font-bold text-sm">3</span>
                 </div>
                 <div>
                   <h3 className="text-lg font-inter font-bold text-charcoal-900 mb-2">

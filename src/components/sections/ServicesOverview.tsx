@@ -79,7 +79,7 @@ export function ServicesOverview() {
           </p>
           <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-sm">
             <span className="text-sm text-charcoal-600 mr-2">Every package includes:</span>
-            <span className="text-sm font-medium text-terracotta-600">Real-life meal plans • Text support • No judgment zone</span>
+            <span className="text-sm font-medium text-coral-600">Real-life meal plans • Text support • No judgment zone</span>
           </div>
         </div>
 

@@ -45,7 +45,7 @@ export function Header() {
               <span className="text-xl font-poppins font-bold text-charcoal-900">
                 Dr. Myriam
               </span>
-              <span className="text-sm text-terracotta-600 block leading-tight">
+              <span className="text-sm text-coral-600 block leading-tight">
                 Your No-BS Dietitian
               </span>
             </div>
