@@ -197,7 +197,7 @@ export function PrivacyPolicy() {
               <div className="space-y-3">
                 <div className="flex items-center text-charcoal-600">
                   <Mail className="w-5 h-5 mr-3 text-sage-600" />
-                  <span>myriam.nutritips@gmail.com</span>
+                  <span>hello@drmyriam.com</span>
                 </div>
                 <div className="flex items-center text-charcoal-600">
                   <Phone className="w-5 h-5 mr-3 text-sage-600" />

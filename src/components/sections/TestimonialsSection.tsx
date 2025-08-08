@@ -4,25 +4,25 @@ import { Star, Quote } from 'lucide-react';
 export function TestimonialsSection() {
   const testimonials = [
     {
-      name: 'Maria Rodriguez',
+      name: 'Layla Khoury',
       role: 'Weight Management Client',
-      content: 'Sarah helped me lose 35 pounds and completely changed my relationship with food. Her approach is so practical and sustainable. I finally feel confident about maintaining my health long-term.',
+      content: 'Dr. Myriam helped me lose 35 pounds and completely changed my relationship with food. Her approach is so practical and sustainable. I finally feel confident about maintaining my health long-term.',
       rating: 5,
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg',
       result: 'Lost 35 lbs in 6 months',
     },
     {
-      name: 'David Chen',
+      name: 'Omar Farah',
       role: 'Diabetes Management',
-      content: 'Working with Sarah has been life-changing. My A1C dropped from 8.2 to 6.1, and I have so much more energy. She made managing diabetes feel manageable and even enjoyable.',
+      content: 'Working with Dr. Myriam has been life-changing. My A1C dropped from 8.2 to 6.1, and I have so much more energy. She made managing diabetes feel manageable and even enjoyable.',
       rating: 5,
       image: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg',
       result: 'A1C improved to 6.1',
     },
     {
-      name: 'Jennifer Park',
+      name: 'Nadia Salim',
       role: 'Marathon Runner',
-      content: 'Sarah optimized my nutrition for marathon training, and I PR\'d by 12 minutes! Her sports nutrition expertise is incredible, and she really understands the needs of endurance athletes.',
+      content: 'Dr. Myriam optimized my nutrition for marathon training, and I PR\'d by 12 minutes! Her sports nutrition expertise is incredible, and she really understands the needs of endurance athletes.',
       rating: 5,
       image: 'https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg',
       result: '12-minute PR improvement',

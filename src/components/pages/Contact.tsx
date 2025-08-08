@@ -43,13 +43,13 @@ export function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      details: 'hello@sarahchenrd.com',
+      details: 'hello@drmyriam.com',
       subtitle: 'I respond within 24 hours'
     },
     {
       icon: MapPin,
       title: 'Location',
-      details: 'San Francisco Bay Area',
+      details: 'Jounieh, Lebanon',
       subtitle: 'In-person & virtual consultations'
     }
   ];
@@ -386,27 +386,67 @@ export function Contact() {
               Visit My Office
             </h2>
             <p className="text-lg text-charcoal-600">
-              Located in the heart of San Francisco Bay Area, easily accessible by public transit.
+              Located in the beautiful coastal city of Jounieh, Lebanon, easily accessible by car and public transport.
             </p>
           </div>
           
           <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <div className="aspect-w-16 aspect-h-9">
-              <div className="w-full h-96 bg-sage-100 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-sage-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-poppins font-bold text-charcoal-900 mb-2">
-                    Interactive Map
-                  </h3>
-                  <p className="text-charcoal-600">
-                    123 Health Street, Suite 200<br />
-                    San Francisco, CA 94102
-                  </p>
-                  <p className="text-sm text-charcoal-500 mt-4">
-                    Parking available • Public transit accessible
-                  </p>
+            {/* Clickable Map Widget */}
+            <a
+              href="https://www.google.com/maps/search/33.985842,+35.638290"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full h-96 bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl border-2 border-sage-300 hover:border-sage-400 transition-all duration-300 hover:shadow-lg group cursor-pointer"
+            >
+              <div className="flex flex-col items-center justify-center h-full text-center p-8">
+                <div className="w-20 h-20 bg-sage-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-700 transition-colors duration-300">
+                  <MapPin className="w-10 h-10 text-white" />
                 </div>
+                <h3 className="text-2xl font-poppins font-bold text-charcoal-900 mb-2">
+                  Myriam Diet Clinic
+                </h3>
+                <p className="text-lg text-charcoal-700 mb-4">
+                  Jounieh, Lebanon
+                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-sage-600 text-white rounded-lg group-hover:bg-sage-700 transition-colors duration-300">
+                  <MapPin className="w-5 h-5 mr-2" />
+                  <span className="font-medium">Open in Google Maps</span>
+                </div>
+                <p className="text-sm text-charcoal-500 mt-4">
+                  Click to get directions and view location details
+                </p>
               </div>
+            </a>
+            
+            <div className="mt-6 text-center">
+              <p className="text-charcoal-600 mb-4">
+                 <strong>Nutrition Clinic</strong><br />
+                 Jounieh, Lebanon
+               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                    href="https://www.google.com/maps/search/33.985842,+35.638290"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-4 py-2 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors duration-200"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Get Directions
+                  </a>
+                
+                <a
+                  href="tel:+96103345531"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-coral-600 text-white rounded-lg hover:bg-coral-700 transition-colors duration-200"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call Office
+                </a>
+              </div>
+              
+              <p className="text-sm text-charcoal-500 mt-4">
+                Parking available • Public transit accessible
+              </p>
             </div>
           </div>
         </div>

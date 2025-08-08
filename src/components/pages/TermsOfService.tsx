@@ -264,7 +264,7 @@ export function TermsOfService() {
               <div className="space-y-3">
                 <div className="flex items-center text-charcoal-600">
                   <span className="font-medium">Email:</span>
-                  <span className="ml-2">myriam.nutritips@gmail.com</span>
+                  <span className="ml-2">hello@drmyriam.com</span>
                 </div>
                 <div className="flex items-center text-charcoal-600">
                   <span className="font-medium">Phone:</span>

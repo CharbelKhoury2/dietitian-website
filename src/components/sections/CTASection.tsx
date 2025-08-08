@@ -68,21 +68,7 @@ export function CTASection() {
             <span className="text-sm">✓ 500+ Success Stories</span>
           </div>
 
-          {/* Special Offer */}
-          <div className="mt-8 bg-coral-500/20 backdrop-blur-sm border border-coral-300/30 rounded-2xl p-6">
-            <div className="flex items-center justify-center mb-4">
-              <div className="bg-coral-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                Limited Time Offer
-              </div>
-            </div>
-            <p className="text-sage-100 mb-4">
-              New clients receive <strong className="text-white">20% off</strong> their first consultation package 
-              when you book before the end of this month.
-            </p>
-            <p className="text-sm text-sage-200">
-              Use code: TRANSFORM20 • Expires in 15 days
-            </p>
-          </div>
+
         </div>
       </div>
     </section>

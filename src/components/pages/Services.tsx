@@ -1,9 +1,15 @@
-import React from 'react';
-import { Scale, Stethoscope, Zap, Baby, CheckCircle, ArrowRight, Download } from 'lucide-react';
+import React, { useState } from 'react';
+import { Scale, Stethoscope, Zap, Baby, CheckCircle, ArrowRight, Download, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/Button';
 
 export function Services() {
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setExpandedFAQ(expandedFAQ === index ? null : index);
+  };
+
   const services = [
     {
       id: 'weight-management',
@@ -43,11 +49,7 @@ export function Services() {
         'Physician collaboration and reports',
         'Family education and support'
       ],
-      pricing: {
-        initial: { price: '$250', session: 'Initial Assessment (120 min)' },
-        followUp: { price: '$150', session: 'Follow-up Sessions (60 min)' },
-        package: { price: '$950', session: '6-Session Package (Save $200)' }
-      },
+
       image: 'https://images.pexels.com/photos/4173239/pexels-photo-4173239.jpeg',
       color: 'coral'
     },
@@ -66,11 +68,7 @@ export function Services() {
         'Body composition optimization',
         'Travel nutrition planning'
       ],
-      pricing: {
-        initial: { price: '$225', session: 'Initial Consultation (90 min)' },
-        followUp: { price: '$140', session: 'Follow-up Sessions (60 min)' },
-        package: { price: '$900', session: '6-Session Package (Save $180)' }
-      },
+
       image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
       color: 'charcoal'
     },
@@ -89,11 +87,7 @@ export function Services() {
         'Parent education and coaching',
         'Teen athlete nutrition support'
       ],
-      pricing: {
-        initial: { price: '$200', session: 'Family Consultation (90 min)' },
-        followUp: { price: '$130', session: 'Follow-up Sessions (60 min)' },
-        package: { price: '$850', session: '6-Session Package (Save $180)' }
-      },
+
       image: 'https://images.pexels.com/photos/3823495/pexels-photo-3823495.jpeg',
       color: 'sage'
     }
@@ -247,7 +241,7 @@ export function Services() {
             Frequently Asked Questions
           </h2>
           
-          <div className="space-y-8">
+          <div className="space-y-4">
             {[
               {
                 question: "Do you accept insurance?",
@@ -269,16 +263,33 @@ export function Services() {
                 question: "Do you provide meal plans?",
                 answer: "Yes, I create detailed, personalized meal plans based on your preferences, schedule, and nutritional needs. I also provide grocery lists, recipes, and meal prep guidance to make implementation easy."
               }
-            ].map((faq, index) => (
-              <div key={index} className="bg-ivory-50 rounded-xl p-6">
-                <h3 className="text-lg font-poppins font-semibold text-charcoal-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-charcoal-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+            ].map((faq, index) => {
+              const isExpanded = expandedFAQ === index;
+              return (
+                <div key={index} className="bg-ivory-50 rounded-xl border border-ivory-200 overflow-hidden">
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-ivory-100 transition-colors"
+                  >
+                    <h3 className="text-lg font-poppins font-semibold text-charcoal-900">
+                      {faq.question}
+                    </h3>
+                    {isExpanded ? (
+                      <ChevronUp className="w-5 h-5 text-charcoal-600 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-charcoal-600 flex-shrink-0" />
+                    )}
+                  </button>
+                  {isExpanded && (
+                    <div className="px-6 pb-6">
+                      <p className="text-charcoal-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

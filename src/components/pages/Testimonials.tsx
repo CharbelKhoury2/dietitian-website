@@ -4,9 +4,9 @@ import { Star, Quote, TrendingDown, Heart, Zap, Users } from 'lucide-react';
 export function Testimonials() {
   const featuredTestimonials = [
     {
-      name: 'Maria Rodriguez',
+      name: 'Layla Khoury',
       role: 'Weight Management Success',
-      content: 'Sarah helped me lose 35 pounds and completely changed my relationship with food. Her approach is so practical and sustainable. I finally feel confident about maintaining my health long-term. The personalized meal plans made all the difference.',
+      content: 'Dr. Myriam helped me lose 35 pounds and completely changed my relationship with food. Her approach is so practical and sustainable. I finally feel confident about maintaining my health long-term. The personalized meal plans made all the difference.',
       rating: 5,
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg',
       result: 'Lost 35 lbs in 6 months',
@@ -14,9 +14,9 @@ export function Testimonials() {
       category: 'weight-loss'
     },
     {
-      name: 'David Chen',
+      name: 'Omar Farah',
       role: 'Diabetes Management',
-      content: 'Working with Sarah has been life-changing. My A1C dropped from 8.2 to 6.1, and I have so much more energy. She made managing diabetes feel manageable and even enjoyable. Her knowledge of medical nutrition therapy is incredible.',
+      content: 'Working with Dr. Myriam has been life-changing. My A1C dropped from 8.2 to 6.1, and I have so much more energy. She made managing diabetes feel manageable and even enjoyable. Her knowledge of medical nutrition therapy is incredible.',
       rating: 5,
       image: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg',
       result: 'A1C improved to 6.1',
@@ -24,9 +24,9 @@ export function Testimonials() {
       category: 'medical'
     },
     {
-      name: 'Jennifer Park',
+      name: 'Nadia Salim',
       role: 'Marathon Runner',
-      content: 'Sarah optimized my nutrition for marathon training, and I PR\'d by 12 minutes! Her sports nutrition expertise is incredible, and she really understands the needs of endurance athletes. The race day nutrition plan was perfect.',
+      content: 'Dr. Myriam optimized my nutrition for marathon training, and I PR\'d by 12 minutes! Her sports nutrition expertise is incredible, and she really understands the needs of endurance athletes. The race day nutrition plan was perfect.',
       rating: 5,
       image: 'https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg',
       result: '12-minute PR improvement',
@@ -37,44 +37,44 @@ export function Testimonials() {
 
   const additionalTestimonials = [
     {
-      name: 'Lisa Thompson',
+      name: 'Rima Haddad',
       role: 'Busy Mom of 3',
-      content: 'Sarah helped our whole family eat better without the stress. My kids actually ask for the healthy snacks now, and meal planning has become so much easier.',
+      content: 'Dr. Myriam helped our whole family eat better without the stress. My kids actually ask for the healthy snacks now, and meal planning has become so much easier.',
       rating: 5,
       category: 'family'
     },
     {
-      name: 'Michael Rodriguez',
+      name: 'Khalil Mansour',
       role: 'Heart Disease Recovery',
-      content: 'After my heart attack, Sarah guided me through a complete nutrition overhaul. My cholesterol dropped 60 points, and my cardiologist is amazed at my progress.',
+      content: 'After my heart attack, Dr. Myriam guided me through a complete nutrition overhaul. My cholesterol dropped 60 points, and my cardiologist is amazed at my progress.',
       rating: 5,
       category: 'medical'
     },
     {
-      name: 'Sarah Kim',
+      name: 'Yasmin Tabbara',
       role: 'College Athlete',
-      content: 'Sarah helped me fuel properly for soccer season. My performance and recovery improved dramatically. She made sports nutrition simple to understand and follow.',
+      content: 'Dr. Myriam helped me fuel properly for soccer season. My performance and recovery improved dramatically. She made sports nutrition simple to understand and follow.',
       rating: 5,
       category: 'sports'
     },
     {
-      name: 'Robert Davis',
+      name: 'Samir Abou Zeid',
       role: 'Pre-Diabetes Reversal',
-      content: 'I was pre-diabetic and terrified. Sarah\'s program helped me lose weight and get my blood sugar back to normal. I feel like I got my life back.',
+      content: 'I was pre-diabetic and terrified. Dr. Myriam\'s program helped me lose weight and get my blood sugar back to normal. I feel like I got my life back.',
       rating: 5,
       category: 'medical'
     },
     {
-      name: 'Amanda Foster',
+      name: 'Lara Nasrallah',
       role: 'Digestive Health',
-      content: 'Years of digestive issues finally resolved with Sarah\'s help. She identified my trigger foods and created a plan that healed my gut. I feel amazing now.',
+      content: 'Years of digestive issues finally resolved with Dr. Myriam\'s help. She identified my trigger foods and created a plan that healed my gut. I feel amazing now.',
       rating: 5,
       category: 'medical'
     },
     {
-      name: 'James Wilson',
+      name: 'Fadi Karam',
       role: 'Bodybuilding Prep',
-      content: 'Sarah helped me prepare for my first bodybuilding competition. Her precision with macros and timing was incredible. I placed 2nd in my division!',
+      content: 'Dr. Myriam helped me prepare for my first bodybuilding competition. Her precision with macros and timing was incredible. I placed 2nd in my division!',
       rating: 5,
       category: 'sports'
     }
@@ -252,13 +252,13 @@ export function Testimonials() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                name: 'Maria Rodriguez',
+                name: 'Layla Khoury',
                 title: 'Weight Loss Journey',
                 thumbnail: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg',
                 duration: '3:42'
               },
               {
-                name: 'David Chen',
+                name: 'Omar Farah',
                 title: 'Diabetes Management',
                 thumbnail: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg',
                 duration: '4:15'

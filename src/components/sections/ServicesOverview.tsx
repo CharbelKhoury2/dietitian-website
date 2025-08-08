@@ -10,7 +10,7 @@ export function ServicesOverview() {
       title: 'Weight Management',
       description: 'Sustainable weight loss and maintenance strategies tailored to your lifestyle, metabolism, and preferences.',
       features: ['Personalized meal plans', 'Behavioral coaching', 'Metabolic assessment', 'Long-term support'],
-      price: 'Starting at $150',
+
       color: 'sage',
     },
     {
@@ -18,7 +18,7 @@ export function ServicesOverview() {
       title: 'Medical Nutrition Therapy',
       description: 'Specialized nutrition interventions for diabetes, heart disease, kidney conditions, and digestive disorders.',
       features: ['Disease-specific protocols', 'Lab review & interpretation', 'Insurance billing', 'Physician collaboration'],
-      price: 'Starting at $200',
+
       color: 'coral',
     },
     {
@@ -26,7 +26,7 @@ export function ServicesOverview() {
       title: 'Sports Nutrition',
       description: 'Performance optimization for athletes and active individuals through strategic nutrition planning.',
       features: ['Performance meal plans', 'Supplement guidance', 'Recovery protocols', 'Competition prep'],
-      price: 'Starting at $175',
+
       color: 'charcoal',
     },
     {
@@ -34,7 +34,7 @@ export function ServicesOverview() {
       title: 'Pediatric Nutrition',
       description: 'Nutrition guidance for children and families, including picky eating, allergies, and growth concerns.',
       features: ['Family meal planning', 'Allergy management', 'Growth monitoring', 'Parent education'],
-      price: 'Starting at $160',
+
       color: 'sage',
     },
   ];
@@ -100,12 +100,7 @@ export function ServicesOverview() {
                   <div className={`p-3 bg-gradient-to-r ${colors.gradient} rounded-xl`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <div className="text-right">
-                    <span className={`text-lg font-bold ${colors.price}`}>
-                      {service.price}
-                    </span>
-                    <p className="text-sm text-charcoal-500">per session</p>
-                  </div>
+
                 </div>
 
                 {/* Content */}
@@ -117,10 +112,9 @@ export function ServicesOverview() {
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-2 mb-6">
+                <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-charcoal-600">
-                      <div className={`w-1.5 h-1.5 rounded-full ${colors.icon.replace('text-', 'bg-')} mr-3`}></div>
+                    <li key={idx} className="text-sm text-charcoal-600">
                       {feature}
                     </li>
                   ))}

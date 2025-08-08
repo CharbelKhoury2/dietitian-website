@@ -1,81 +1,54 @@
-import React, { useState } from 'react';
-import { Calendar, Clock, Video, MapPin, CheckCircle, ArrowRight, Phone } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Calendar, Clock, CheckCircle, Phone, Video, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
 
-export function BookingPage() {
-  const [selectedService, setSelectedService] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
-  const [selectedTime, setSelectedTime] = useState('');
-  const [appointmentType, setAppointmentType] = useState('virtual');
+const BookingPage: React.FC = () => {
+  const [selectedService, setSelectedService] = useState<string>('');
+  const [selectedDate, setSelectedDate] = useState<string>('');
+  const [selectedTime, setSelectedTime] = useState<string>('');
+  const [appointmentType, setAppointmentType] = useState<'virtual' | 'in-person'>('virtual');
+  const [availableDates, setAvailableDates] = useState<string[]>([]);
 
   const services = [
     {
-      id: 'discovery',
-      name: 'Free Discovery Call',
-      duration: '15 minutes',
-      price: 'Free',
-      description: 'Get to know me and discuss your health goals',
-      type: 'virtual-only'
-    },
-    {
-      id: 'weight-management',
-      name: 'Weight Management Consultation',
-      duration: '90 minutes',
-      price: '$200',
-      description: 'Comprehensive weight management assessment and planning'
-    },
-    {
-      id: 'medical-nutrition',
-      name: 'Medical Nutrition Therapy',
-      duration: '120 minutes',
-      price: '$250',
-      description: 'Specialized nutrition for medical conditions'
-    },
-    {
-      id: 'sports-nutrition',
-      name: 'Sports Nutrition Consultation',
-      duration: '90 minutes',
-      price: '$225',
-      description: 'Performance optimization for athletes'
-    },
-    {
-      id: 'pediatric',
-      name: 'Pediatric Nutrition (Family)',
-      duration: '90 minutes',
-      price: '$200',
-      description: 'Family-focused nutrition for children'
+      id: 'initial-consultation',
+      name: 'Initial Consultation',
+      description: 'Comprehensive health assessment and personalized nutrition plan',
+      duration: '60 minutes',
+      type: 'both'
     },
     {
       id: 'follow-up',
       name: 'Follow-up Session',
-      duration: '60 minutes',
-      price: '$125',
-      description: 'Ongoing support and plan adjustments'
+      description: 'Progress review and plan adjustments',
+      duration: '30 minutes',
+      type: 'both'
+    },
+    {
+      id: 'meal-planning',
+      name: 'Meal Planning Session',
+      description: 'Detailed meal plans and grocery shopping guidance',
+      duration: '45 minutes',
+      type: 'virtual-only'
+    },
+    {
+      id: 'group-session',
+      name: 'Group Nutrition Workshop',
+      description: 'Interactive workshop covering nutrition fundamentals',
+      duration: '90 minutes',
+      type: 'both'
     }
   ];
 
-  const availableDates = [
-    '2024-02-01',
-    '2024-02-02',
-    '2024-02-05',
-    '2024-02-06',
-    '2024-02-07',
-    '2024-02-08',
-    '2024-02-09'
+  const availableTimes = [
+    '9:00 AM', '10:00 AM', '11:00 AM',
+    '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
   ];
 
-  const availableTimes = [
-    '9:00 AM',
-    '10:30 AM',
-    '12:00 PM',
-    '1:30 PM',
-    '3:00 PM',
-    '4:30 PM'
-  ];
+  const selectedServiceInfo = services.find(s => s.id === selectedService);
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
+    return new Date(dateString).toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -83,314 +56,263 @@ export function BookingPage() {
     });
   };
 
-  const selectedServiceInfo = services.find(s => s.id === selectedService);
+  useEffect(() => {
+    // Generate available dates (next 30 days, excluding weekends)
+    const dates = [];
+    const today = new Date();
+    
+    for (let i = 1; i <= 45; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() + i);
+      
+      // Skip weekends
+      if (date.getDay() !== 0 && date.getDay() !== 6) {
+        dates.push(date.toISOString().split('T')[0]);
+      }
+      
+      if (dates.length >= 30) break;
+    }
+    
+    setAvailableDates(dates);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-ivory-200">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-sage-50 to-coral-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 mb-6">
-            Book Your Consultation
-          </h1>
-          <p className="text-xl text-charcoal-600 leading-relaxed mb-8">
-            Take the first step toward better health. Schedule your personalized 
-            nutrition consultation with just a few clicks.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
-              <CheckCircle className="w-4 h-4 text-sage-500 mr-2" />
-              <span className="text-charcoal-700">Free Discovery Call Available</span>
-            </div>
-            <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
-              <CheckCircle className="w-4 h-4 text-sage-500 mr-2" />
-              <span className="text-charcoal-700">Virtual & In-Person Options</span>
-            </div>
-            <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
-              <CheckCircle className="w-4 h-4 text-sage-500 mr-2" />
-              <span className="text-charcoal-700">Same Week Availability</span>
-            </div>
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+              Book Your
+              <span className="text-green-600"> Consultation</span>
+            </h1>
+            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+              Take the first step towards a healthier you. Schedule your personalized nutrition consultation today.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Booking Form */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="p-8 lg:p-12">
-              {/* Step 1: Service Selection */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
-                  <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
-                    1
-                  </div>
-                  Choose Your Service
-                </h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {services.map((service) => (
-                    <div
-                      key={service.id}
-                      className={`relative p-6 border-2 rounded-xl cursor-pointer transition-all hover:shadow-md ${
-                        selectedService === service.id
-                          ? 'border-sage-500 bg-sage-50'
-                          : 'border-sage-200 hover:border-sage-300'
-                      }`}
-                      onClick={() => setSelectedService(service.id)}
-                    >
-                      <div className="flex justify-between items-start mb-3">
-                        <h3 className="font-poppins font-semibold text-charcoal-900">
-                          {service.name}
-                        </h3>
-                        <div className="text-right">
-                          <div className="text-lg font-bold text-sage-600">{service.price}</div>
-                          <div className="text-sm text-charcoal-500">{service.duration}</div>
-                        </div>
-                      </div>
-                      <p className="text-sm text-charcoal-600">{service.description}</p>
-                      
-                      {service.type === 'virtual-only' && (
-                        <div className="mt-3 inline-flex items-center text-xs text-coral-600">
-                          <Video className="w-3 h-3 mr-1" />
-                          Virtual only
-                        </div>
-                      )}
-                      
-                      {selectedService === service.id && (
-                        <div className="absolute top-4 right-4">
-                          <CheckCircle className="w-5 h-5 text-sage-600" />
-                        </div>
-                      )}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="px-6 py-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Schedule Your Appointment</h2>
+            
+            {/* Service Selection */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Select a Service</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {services.map((service) => (
+                  <div
+                    key={service.id}
+                    className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                      selectedService === service.id
+                        ? 'border-green-500 bg-green-50'
+                        : 'border-gray-200 hover:border-green-300'
+                    }`}
+                    onClick={() => setSelectedService(service.id)}
+                  >
+                    <h4 className="font-semibold text-gray-900">{service.name}</h4>
+                    <p className="text-sm text-gray-600 mt-1">{service.description}</p>
+                    <div className="mt-3">
+                      <span className="text-sm text-gray-500">{service.duration}</span>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Appointment Type Selection */}
+            {selectedService && selectedServiceInfo?.type !== 'virtual-only' && (
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Appointment Type</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div
+                    className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                      appointmentType === 'virtual'
+                        ? 'border-green-500 bg-green-50'
+                        : 'border-gray-200 hover:border-green-300'
+                    }`}
+                    onClick={() => setAppointmentType('virtual')}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <Video className="h-6 w-6 text-green-600" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Virtual Consultation</h4>
+                        <p className="text-sm text-gray-600">Meet from the comfort of your home</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                      appointmentType === 'in-person'
+                        ? 'border-green-500 bg-green-50'
+                        : 'border-gray-200 hover:border-green-300'
+                    }`}
+                    onClick={() => setAppointmentType('in-person')}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="h-6 w-6 text-green-600" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">In-Person Visit</h4>
+                        <p className="text-sm text-gray-600">Visit our Lebanon office</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Date Selection */}
+            {selectedService && (
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Select Date</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                  {availableDates.slice(0, 15).map((date) => (
+                    <button
+                      key={date}
+                      className={`p-3 text-sm border rounded-lg transition-all ${
+                        selectedDate === date
+                          ? 'border-green-500 bg-green-50 text-green-700'
+                          : 'border-gray-200 hover:border-green-300 text-gray-700'
+                      }`}
+                      onClick={() => setSelectedDate(date)}
+                    >
+                      <div className="flex flex-col items-center">
+                        <Calendar className="h-4 w-4 mb-1" />
+                        <span className="font-medium">
+                          {new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                        </span>
+                        <span className="text-xs">
+                          {new Date(date).toLocaleDateString('en-US', { weekday: 'short' })}
+                        </span>
+                      </div>
+                    </button>
                   ))}
                 </div>
               </div>
+            )}
 
-              {/* Step 2: Appointment Type (if applicable) */}
-              {selectedService && selectedServiceInfo?.type !== 'virtual-only' && (
-                <div className="mb-12">
-                  <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
-                    <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
-                      2
-                    </div>
-                    Choose Appointment Type
-                  </h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div
-                      className={`p-6 border-2 rounded-xl cursor-pointer transition-all hover:shadow-md ${
-                        appointmentType === 'virtual'
-                          ? 'border-sage-500 bg-sage-50'
-                          : 'border-sage-200 hover:border-sage-300'
+            {/* Time Selection */}
+            {selectedDate && (
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Select Time</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {availableTimes.map((time) => (
+                    <button
+                      key={time}
+                      className={`p-3 text-sm border rounded-lg transition-all ${
+                        selectedTime === time
+                          ? 'border-green-500 bg-green-50 text-green-700'
+                          : 'border-gray-200 hover:border-green-300 text-gray-700'
                       }`}
-                      onClick={() => setAppointmentType('virtual')}
+                      onClick={() => setSelectedTime(time)}
                     >
-                      <div className="flex items-center mb-3">
-                        <Video className="w-6 h-6 text-sage-600 mr-3" />
-                        <h3 className="font-poppins font-semibold text-charcoal-900">
-                          Virtual Consultation
-                        </h3>
-                        {appointmentType === 'virtual' && (
-                          <CheckCircle className="w-5 h-5 text-sage-600 ml-auto" />
-                        )}
+                      <div className="flex items-center justify-center space-x-2">
+                        <Clock className="h-4 w-4" />
+                        <span>{time}</span>
                       </div>
-                      <p className="text-sm text-charcoal-600">
-                        Meet from the comfort of your home via secure video call
-                      </p>
-                    </div>
-                    
-                    <div
-                      className={`p-6 border-2 rounded-xl cursor-pointer transition-all hover:shadow-md ${
-                        appointmentType === 'in-person'
-                          ? 'border-sage-500 bg-sage-50'
-                          : 'border-sage-200 hover:border-sage-300'
-                      }`}
-                      onClick={() => setAppointmentType('in-person')}
-                    >
-                      <div className="flex items-center mb-3">
-                        <MapPin className="w-6 h-6 text-sage-600 mr-3" />
-                        <h3 className="font-poppins font-semibold text-charcoal-900">
-                          In-Person Visit
-                        </h3>
-                        {appointmentType === 'in-person' && (
-                          <CheckCircle className="w-5 h-5 text-sage-600 ml-auto" />
-                        )}
-                      </div>
-                      <p className="text-sm text-charcoal-600">
-                        Visit my office in San Francisco Bay Area
-                      </p>
-                    </div>
-                  </div>
+                    </button>
+                  ))}
                 </div>
-              )}
-
-              {/* Step 3: Date Selection */}
-              {selectedService && (
-                <div className="mb-12">
-                  <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
-                    <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
-                      {selectedServiceInfo?.type === 'virtual-only' ? '2' : '3'}
-                    </div>
-                    Select Date
-                  </h2>
-                  
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                    {availableDates.map((date) => (
-                      <button
-                        key={date}
-                        className={`p-4 border-2 rounded-xl text-left transition-all hover:shadow-md ${
-                          selectedDate === date
-                            ? 'border-sage-500 bg-sage-50'
-                            : 'border-sage-200 hover:border-sage-300'
-                        }`}
-                        onClick={() => setSelectedDate(date)}
-                      >
-                        <div className="text-sm font-medium text-charcoal-900">
-                          {new Date(date).toLocaleDateString('en-US', { weekday: 'short' })}
-                        </div>
-                        <div className="text-lg font-bold text-charcoal-800">
-                          {new Date(date).getDate()}
-                        </div>
-                        <div className="text-sm text-charcoal-600">
-                          {new Date(date).toLocaleDateString('en-US', { month: 'short' })}
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Step 4: Time Selection */}
-              {selectedService && selectedDate && (
-                <div className="mb-12">
-                  <h2 className="text-2xl font-poppins font-bold text-charcoal-900 mb-6 flex items-center">
-                    <div className="w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">
-                      {selectedServiceInfo?.type === 'virtual-only' ? '3' : '4'}
-                    </div>
-                    Select Time
-                  </h2>
-                  
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                    {availableTimes.map((time) => (
-                      <button
-                        key={time}
-                        className={`p-4 border-2 rounded-xl transition-all hover:shadow-md ${
-                          selectedTime === time
-                            ? 'border-sage-500 bg-sage-50'
-                            : 'border-sage-200 hover:border-sage-300'
-                        }`}
-                        onClick={() => setSelectedTime(time)}
-                      >
-                        <div className="flex items-center justify-center">
-                          <Clock className="w-4 h-4 text-sage-600 mr-2" />
-                          <span className="font-medium text-charcoal-900">{time}</span>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Booking Summary & CTA */}
-              {selectedService && selectedDate && selectedTime && (
-                <div className="bg-sage-50 rounded-xl p-6 mb-8">
-                  <h3 className="text-xl font-poppins font-bold text-charcoal-900 mb-4">
-                    Booking Summary
-                  </h3>
-                  
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-charcoal-600">Service:</span>
-                      <span className="font-medium text-charcoal-900">{selectedServiceInfo?.name}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-charcoal-600">Date:</span>
-                      <span className="font-medium text-charcoal-900">{formatDate(selectedDate)}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-charcoal-600">Time:</span>
-                      <span className="font-medium text-charcoal-900">{selectedTime}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-charcoal-600">Duration:</span>
-                      <span className="font-medium text-charcoal-900">{selectedServiceInfo?.duration}</span>
-                    </div>
-                    {selectedServiceInfo?.type !== 'virtual-only' && (
-                      <div className="flex justify-between">
-                        <span className="text-charcoal-600">Type:</span>
-                        <span className="font-medium text-charcoal-900">
-                          {appointmentType === 'virtual' ? 'Virtual Consultation' : 'In-Person Visit'}
-                        </span>
-                      </div>
-                    )}
-                    <div className="flex justify-between border-t pt-3">
-                      <span className="font-medium text-charcoal-900">Total:</span>
-                      <span className="text-xl font-bold text-sage-600">{selectedServiceInfo?.price}</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                {selectedService && selectedDate && selectedTime ? (
-                  <Button size="lg" className="flex-1 justify-center">
-                    Continue to Booking Form
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                ) : (
-                  <div className="flex-1 bg-sage-100 text-sage-600 px-8 py-4 rounded-lg text-center">
-                    Please complete all steps above to continue
-                  </div>
-                )}
-                
-                <Button
-                  variant="outline"
-                  size="lg"
-                  as="a"
-                  href="tel:+96103345531"
-                  className="flex items-center justify-center"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call to Book: +961 03 345 531
-                </Button>
               </div>
-            </div>
+            )}
+
+            {/* Booking Summary */}
+            {selectedService && selectedDate && selectedTime && (
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Booking Summary</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Service:</span>
+                    <span className="font-medium">{selectedServiceInfo?.name}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Date:</span>
+                    <span className="font-medium">{formatDate(selectedDate)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Time:</span>
+                    <span className="font-medium">{selectedTime}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Duration:</span>
+                    <span className="font-medium">{selectedServiceInfo?.duration}</span>
+                  </div>
+                  {selectedServiceInfo?.type !== 'virtual-only' && (
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Type:</span>
+                      <span className="font-medium capitalize">
+                        {appointmentType === 'virtual' ? 'Virtual Consultation' : 'In-Person Visit'}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                
+                <Button className="w-full mt-6 flex items-center justify-center space-x-2">
+                  <span>Confirm Booking</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                
+                <p className="text-sm text-gray-500 text-center mt-4">
+                  You'll receive a confirmation email with meeting details after booking.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* What to Expect Section */}
+      <div className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              What to Expect
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Your journey to better health starts here
+            </p>
           </div>
 
-          {/* Additional Info */}
-          <div className="mt-12 bg-white rounded-xl p-6 shadow-sm">
-            <h3 className="font-poppins font-bold text-charcoal-900 mb-4">
-              What to Expect
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-              <div>
-                <h4 className="font-semibold text-charcoal-900 mb-2">Before Your Appointment</h4>
-                <p className="text-charcoal-600">
-                  You'll receive a comprehensive health questionnaire to complete, 
-                  along with preparation guidelines.
+          <div className="mt-20">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="text-center">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
+                  <CheckCircle className="h-6 w-6" />
+                </div>
+                <h3 className="mt-6 text-lg font-medium text-gray-900">Comprehensive Assessment</h3>
+                <p className="mt-2 text-base text-gray-500">
+                  We'll review your health history, dietary habits, and lifestyle to create a complete picture.
                 </p>
               </div>
-              <div>
-                <h4 className="font-semibold text-charcoal-900 mb-2">During Your Session</h4>
-                <p className="text-charcoal-600">
-                  We'll review your health history, discuss your goals, and create 
-                  a personalized nutrition plan.
+
+              <div className="text-center">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
+                  <CheckCircle className="h-6 w-6" />
+                </div>
+                <h3 className="mt-6 text-lg font-medium text-gray-900">Personalized Plan</h3>
+                <p className="mt-2 text-base text-gray-500">
+                  Receive a customized nutrition plan tailored to your specific goals and preferences.
                 </p>
               </div>
-              <div>
-                <h4 className="font-semibold text-charcoal-900 mb-2">After Your Visit</h4>
-                <p className="text-charcoal-600">
-                  You'll receive a detailed summary, meal plans, and resources 
-                  within 48 hours of your appointment.
+
+              <div className="text-center">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
+                  <CheckCircle className="h-6 w-6" />
+                </div>
+                <h3 className="mt-6 text-lg font-medium text-gray-900">Ongoing Support</h3>
+                <p className="mt-2 text-base text-gray-500">
+                  Get continuous guidance and adjustments to ensure you stay on track with your goals.
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
-}
+};
+
+export default BookingPage;

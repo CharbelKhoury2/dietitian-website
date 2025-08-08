@@ -9,11 +9,12 @@ import { Testimonials } from './components/pages/Testimonials';
 import { Blog } from './components/pages/Blog';
 import { ArticlePage } from './components/pages/ArticlePage';
 import { Contact } from './components/pages/Contact';
-import { BookingPage } from './components/pages/BookingPage';
+import BookingPage from './components/pages/BookingPage';
 import { AdminDashboard } from './components/pages/AdminDashboard';
 import { PrivacyPolicy } from './components/pages/PrivacyPolicy';
 import { TermsOfService } from './components/pages/TermsOfService';
 import { ScrollToTop } from './components/ui/ScrollToTop';
+import { WhatsAppButton } from './components/ui/WhatsAppButton';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
   );

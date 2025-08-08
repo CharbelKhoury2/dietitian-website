@@ -193,7 +193,7 @@ export function About() {
               🔹️ What sets my practice apart is my deep commitment to personalization. I don't 
               just give you a meal plan - I work with you to create personalized strategies that 
               meet your physical needs, emotional behaviors, lifestyle demands, and medical 
-              conditions. My meal plans are incredibly flexible with numerous +++ choices, because 
+              conditions. My meal plans are incredibly flexible with numerous choices, because 
               I've learned that rigid restriction never works long-term.
             </p>
             
@@ -312,7 +312,7 @@ export function About() {
             <div className="text-left">
               <p className="text-lg text-charcoal-600 leading-relaxed mb-6">
                 When I'm not working with clients, you can find me exploring the beautiful hiking 
-                trails around San Francisco Bay, experimenting with new healthy recipes in my kitchen, 
+                trails around Lebanon, experimenting with new healthy recipes in my kitchen, 
                 or practicing yoga in my backyard garden.
               </p>
               
@@ -325,7 +325,7 @@ export function About() {
               <p className="text-lg text-charcoal-600 leading-relaxed">
                 I'm also passionate about making nutrition education accessible to everyone and 
                 regularly volunteer at local community health fairs and speak at wellness events 
-                throughout the Bay Area.
+                throughout Lebanon.
               </p>
             </div>
           </div>
