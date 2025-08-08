@@ -312,6 +312,33 @@ export function Contact() {
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
+                  const isLocation = info.title === 'Location';
+                  
+                  if (isLocation) {
+                    return (
+                      <a
+                        key={index}
+                        href="https://www.google.com/maps/place/33.985842,35.638290/@33.985842,35.638290,17z"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start space-x-4 hover:bg-sage-50 rounded-lg p-3 -m-3 transition-colors cursor-pointer group"
+                      >
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center group-hover:bg-sage-200 transition-colors">
+                            <Icon className="w-6 h-6 text-sage-600" />
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="font-poppins font-semibold text-charcoal-900 mb-1 group-hover:text-sage-700 transition-colors">
+                            {info.title}
+                          </h3>
+                          <p className="text-lg text-charcoal-700 mb-1 group-hover:text-sage-600 transition-colors">{info.details}</p>
+                          <p className="text-sm text-charcoal-500">{info.subtitle}</p>
+                        </div>
+                      </a>
+                    );
+                  }
+                  
                   return (
                     <div key={index} className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
@@ -393,7 +420,7 @@ export function Contact() {
           <div className="bg-white rounded-2xl p-8 shadow-sm">
             {/* Clickable Map Widget */}
             <a
-              href="https://www.google.com/maps/search/33.985842,+35.638290"
+              href="https://www.google.com/maps/place/33.985842,35.638290/@33.985842,35.638290,17z"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full h-96 bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl border-2 border-sage-300 hover:border-sage-400 transition-all duration-300 hover:shadow-lg group cursor-pointer"
@@ -426,7 +453,7 @@ export function Contact() {
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
-                    href="https://www.google.com/maps/search/33.985842,+35.638290"
+                    href="https://www.google.com/maps/place/33.985842,35.638290/@33.985842,35.638290,17z"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-4 py-2 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors duration-200"

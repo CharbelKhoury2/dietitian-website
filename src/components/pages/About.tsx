@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, BookOpen, Users, Heart, Target, Shield } from 'lucide-react';
+import { Award, Heart, Users, Target, Zap, Shield, Instagram, Facebook, MapPin, BookOpen } from 'lucide-react';
 
 export function About() {
   const credentials = [
@@ -117,15 +117,15 @@ export function About() {
               <span className="text-sm">|</span>
               <span className="text-sm">📧 myriam_nutritips</span>
             </div>
-            <div className="flex justify-center space-x-4">
-              <a href="https://www.instagram.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
-                Instagram: @myriam_nutritips
+            <div className="flex justify-center space-x-6">
+              <a href="https://www.instagram.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 transition-colors">
+                <Instagram className="w-6 h-6" />
               </a>
-              <a href="https://www.facebook.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
-                Facebook: Myriam_nutritips
+              <a href="https://www.facebook.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 transition-colors">
+                <Facebook className="w-6 h-6" />
               </a>
-              <a href="https://tr.ee/3Mi4CjGZQ7" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
-                📍 Google Maps Location
+              <a href="https://tr.ee/3Mi4CjGZQ7" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 transition-colors">
+                <MapPin className="w-6 h-6" />
               </a>
             </div>
           </div>

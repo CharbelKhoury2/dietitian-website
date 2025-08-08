@@ -6,8 +6,6 @@ import { Button } from '../ui/Button';
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const menuRef = useRef<HTMLDivElement>(null);
@@ -49,19 +47,20 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
-  // Handle animation timing
+  // Handle body scroll lock
   useEffect(() => {
     if (isMenuOpen) {
-      setIsAnimating(true);
-      // Small delay to ensure the drawer starts from hidden position
-      setTimeout(() => {
-        setIsVisible(true);
-      }, 10);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
     } else {
-      setIsVisible(false);
-      const timer = setTimeout(() => setIsAnimating(false), 300);
-      return () => clearTimeout(timer);
+      // Re-enable body scroll when menu is closed
+      document.body.style.overflow = 'unset';
     }
+    
+    // Cleanup function to ensure scroll is re-enabled if component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [isMenuOpen]);
 
   const navigation = [
@@ -88,7 +87,7 @@ export function Header() {
             <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
               <img src="/profile-logo.svg" alt="Dr. Myriam" className="w-full h-full object-cover" />
             </div>
-            <div className="hidden sm:block">
+            <div>
               <span className="text-xl font-poppins font-bold text-charcoal-900">
                 Dr. Myriam
               </span>
@@ -145,17 +144,16 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation Drawer */}
-        {(isMenuOpen || isAnimating) && (
-          <>
-            {/* Backdrop */}
-            <div className={`lg:hidden fixed inset-0 bg-black z-40 transition-opacity duration-200 ease-in-out ${
-              isVisible ? 'bg-opacity-50' : 'bg-opacity-0'
-            }`} />
-            
-            {/* Drawer */}
-            <div className={`lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${
-              isVisible ? 'translate-x-0' : 'translate-x-full'
-            }`} ref={menuRef}>
+        <>
+          {/* Backdrop */}
+          <div className={`lg:hidden fixed inset-0 bg-black z-[9998] transition-all duration-200 ease-in-out ${
+            isMenuOpen ? 'opacity-50 visible' : 'opacity-0 invisible'
+          }`} />
+          
+          {/* Drawer */}
+          <div className={`lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl z-[9999] transform transition-transform duration-200 ease-out will-change-transform ${
+             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+           }`} ref={menuRef}>
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-sage-100">
@@ -220,7 +218,6 @@ export function Header() {
               </div>
             </div>
           </>
-        )}
       </div>
     </header>
   );

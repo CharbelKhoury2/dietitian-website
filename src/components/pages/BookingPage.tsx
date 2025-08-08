@@ -153,7 +153,15 @@ const BookingPage: React.FC = () => {
                     onClick={() => setAppointmentType('in-person')}
                   >
                     <div className="flex items-center space-x-3">
-                      <MapPin className="h-6 w-6 text-green-600" />
+                      <a
+                        href="https://www.google.com/maps/place/33.985842,35.638290/@33.985842,35.638290,17z"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:scale-110 transition-transform"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <MapPin className="h-6 w-6 text-green-600 hover:text-green-700" />
+                      </a>
                       <div>
                         <h4 className="font-semibold text-gray-900">In-Person Visit</h4>
                         <p className="text-sm text-gray-600">Visit our Lebanon office</p>
