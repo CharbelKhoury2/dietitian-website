@@ -5,6 +5,8 @@ import { Button } from '../ui/Button';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -34,7 +36,7 @@ export function Header() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
+        handleCloseMenu();
       }
     };
 
@@ -46,6 +48,25 @@ export function Header() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMenuOpen]);
+
+  // Handle menu animations
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsVisible(true);
+      setTimeout(() => setIsAnimating(true), 10);
+    } else {
+      setIsAnimating(false);
+      setTimeout(() => setIsVisible(false), 200);
+    }
+  }, [isMenuOpen]);
+
+  const handleOpenMenu = () => {
+    setIsMenuOpen(true);
+  };
+
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   // Handle body scroll lock
   useEffect(() => {
@@ -136,23 +157,25 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={isMenuOpen ? handleCloseMenu : handleOpenMenu}
             className="lg:hidden p-2 rounded-md text-charcoal-700 hover:text-sage-600 hover:bg-sage-50 transition-colors"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-
-        {/* Mobile Navigation Drawer */}
+      </div>
+      
+      {/* Mobile Navigation Drawer - Outside header container for proper z-index */}
+      {isVisible && (
         <>
           {/* Backdrop */}
-          <div className={`lg:hidden fixed inset-0 bg-black z-[9998] transition-all duration-200 ease-in-out ${
-            isMenuOpen ? 'opacity-50 visible' : 'opacity-0 invisible'
+          <div className={`lg:hidden fixed inset-0 bg-black bg-opacity-50 z-[99998] transition-all duration-300 ease-in-out ${
+            isAnimating ? 'opacity-100' : 'opacity-0'
           }`} />
           
           {/* Drawer */}
-          <div className={`lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl z-[9999] transform transition-transform duration-200 ease-out will-change-transform ${
-             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          <div className={`lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl z-[99999] transform transition-all duration-300 ease-out will-change-transform ${
+             isAnimating ? 'translate-x-0' : 'translate-x-full'
            }`} ref={menuRef}>
               <div className="flex flex-col h-full">
                 {/* Header */}
@@ -171,7 +194,7 @@ export function Header() {
                     </div>
                   </div>
                   <button
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={handleCloseMenu}
                     className="p-2 rounded-md text-charcoal-700 hover:text-sage-600 hover:bg-sage-50 transition-colors"
                   >
                     <X className="w-5 h-5" />
@@ -189,7 +212,7 @@ export function Header() {
                           ? 'text-sage-600 bg-sage-50'
                           : 'text-charcoal-700 hover:text-sage-600 hover:bg-sage-50'
                       }`}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={handleCloseMenu}
                     >
                       {item.name}
                     </Link>
@@ -209,7 +232,7 @@ export function Header() {
                     as={Link}
                     to="/book-consultation"
                     className="w-full flex items-center justify-center"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={handleCloseMenu}
                   >
                     <Calendar className="w-4 h-4 mr-2" />
                     Book Consultation
@@ -218,7 +241,7 @@ export function Header() {
               </div>
             </div>
           </>
-      </div>
+        )}
     </header>
   );
 }

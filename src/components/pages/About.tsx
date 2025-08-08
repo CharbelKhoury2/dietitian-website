@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Heart, Users, Target, Zap, Shield, Instagram, Facebook, MapPin, BookOpen } from 'lucide-react';
+import { Award, BookOpen, Users, Heart, Target, Shield } from 'lucide-react';
 
 export function About() {
   const credentials = [
@@ -117,15 +117,15 @@ export function About() {
               <span className="text-sm">|</span>
               <span className="text-sm">📧 myriam_nutritips</span>
             </div>
-            <div className="flex justify-center space-x-6">
-              <a href="https://www.instagram.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 transition-colors">
-                <Instagram className="w-6 h-6" />
+            <div className="flex justify-center space-x-4">
+              <a href="https://www.instagram.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
+                Instagram: @myriam_nutritips
               </a>
-              <a href="https://www.facebook.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 transition-colors">
-                <Facebook className="w-6 h-6" />
+              <a href="https://www.facebook.com/myriam_nutritips" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
+                Facebook: Myriam_nutritips
               </a>
-              <a href="https://tr.ee/3Mi4CjGZQ7" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 transition-colors">
-                <MapPin className="w-6 h-6" />
+              <a href="https://tr.ee/3Mi4CjGZQ7" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:text-coral-700 font-medium">
+                📍 Google Maps Location
               </a>
             </div>
           </div>
@@ -193,7 +193,7 @@ export function About() {
               🔹️ What sets my practice apart is my deep commitment to personalization. I don't 
               just give you a meal plan - I work with you to create personalized strategies that 
               meet your physical needs, emotional behaviors, lifestyle demands, and medical 
-              conditions. My meal plans are incredibly flexible with numerous choices, because 
+              conditions. My meal plans are incredibly flexible with numerous +++ choices, because 
               I've learned that rigid restriction never works long-term.
             </p>
             
@@ -312,7 +312,7 @@ export function About() {
             <div className="text-left">
               <p className="text-lg text-charcoal-600 leading-relaxed mb-6">
                 When I'm not working with clients, you can find me exploring the beautiful hiking 
-                trails around Lebanon, experimenting with new healthy recipes in my kitchen, 
+                trails around San Francisco Bay, experimenting with new healthy recipes in my kitchen, 
                 or practicing yoga in my backyard garden.
               </p>
               
@@ -325,7 +325,7 @@ export function About() {
               <p className="text-lg text-charcoal-600 leading-relaxed">
                 I'm also passionate about making nutrition education accessible to everyone and 
                 regularly volunteer at local community health fairs and speak at wellness events 
-                throughout Lebanon.
+                throughout the Bay Area.
               </p>
             </div>
           </div>

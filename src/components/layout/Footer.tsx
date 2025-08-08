@@ -58,11 +58,11 @@ export function Footer() {
                 +961 03 345 531
               </a>
               <a
-                href="mailto:hello@drmyriam.com"
+                href="mailto:myriam.nutritips@gmail.com"
                 className="flex items-center text-sm text-gray-300 hover:text-sage-400 transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                hello@drmyriam.com
+                myriam.nutritips@gmail.com
               </a>
               <div className="flex items-center text-sm text-gray-300">
                 <MapPin className="w-4 h-4 mr-2" />
