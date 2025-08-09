@@ -21,12 +21,12 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 leading-tight mb-6">
-              Unlock Your Health Potential: Personalized Nutrition with Dr. <span className="text-coral-600">Myriam</span>
+              Dr. Myriam - Your Trusted Registered Dietitian in <span className="text-coral-600">Lebanon</span>
             </h1>
             
             <p className="text-xl text-charcoal-600 mb-8 leading-relaxed">
-              Skip the diet drama and get real results. As your registered dietitian, I create personalized nutrition plans 
-              that actually work with your life - not against it. Transform your health without the overwhelm.
+              Transform your health with Lebanon's most trusted registered dietitian. I create personalized nutrition plans 
+              that actually work with your life - evidence-based strategies for lasting results in Beirut and surrounding areas.
             </p>
 
             {/* Key Benefits - Instagram-style */}
@@ -55,7 +55,7 @@ export function HeroSection() {
                 </div>
                 <div>
                   <span className="text-charcoal-700 font-medium">Virtual & in-person options</span>
-                  <p className="text-sm text-charcoal-500">Meet however works best for you</p>
+                  <p className="text-sm text-charcoal-500">Serving Beirut, Mount Lebanon & beyond</p>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ export function HeroSection() {
             <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-coral-600">500+</div>
-                <div className="text-sm text-charcoal-500">Happy Clients</div>
+                <div className="text-sm text-charcoal-500">Lebanon Clients</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-coral-600">12+</div>
@@ -93,7 +93,7 @@ export function HeroSection() {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-coral-600">4.9★</div>
-                <div className="text-sm text-charcoal-500">Client Rating</div>
+                <div className="text-sm text-charcoal-500">Google Rating</div>
               </div>
             </div>
           </div>

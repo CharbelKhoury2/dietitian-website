@@ -125,22 +125,22 @@ export function Services() {
       <section className="py-16 lg:py-24 bg-gradient-to-br from-sage-50 to-coral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-charcoal-900 mb-6">
-            Nutrition That Actually Works
+            Professional Nutrition Services in Lebanon
           </h1>
           <p className="text-xl text-charcoal-600 leading-relaxed mb-8">
-            Forget everything you think you know about "dieting." I'm here to help you 
-            build a sustainable, enjoyable relationship with food that gets you results 
-            without the misery.
+            As Lebanon's trusted registered dietitian, I provide evidence-based nutrition services 
+            to clients throughout Beirut, Mount Lebanon, and surrounding areas. Build a sustainable, 
+            enjoyable relationship with food that gets you results.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="bg-white rounded-full px-6 py-3 shadow-sm">
               <span className="text-sm text-charcoal-600">✓ Insurance Accepted</span>
             </div>
             <div className="bg-white rounded-full px-6 py-3 shadow-sm">
-              <span className="text-sm text-charcoal-600">✓ Telehealth Available</span>
+             <span className="text-sm text-charcoal-600">✓ Virtual & In-Person</span>
             </div>
             <div className="bg-white rounded-full px-6 py-3 shadow-sm">
-              <span className="text-sm text-charcoal-600">✓ HIPAA Compliant</span>
+             <span className="text-sm text-charcoal-600">✓ Serving All Lebanon</span>
             </div>
           </div>
         </div>

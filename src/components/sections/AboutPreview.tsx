@@ -18,21 +18,20 @@ export function AboutPreview() {
           {/* Left Content */}
           <div className="animate-fade-in">
             <h2 className="text-3xl font-poppins font-bold text-charcoal-900 mb-4">
-              Meet Myriam, Your Trusted Nutrition Partner
+              Meet Dr. Myriam, Lebanon's Trusted Registered Dietitian
             </h2>
             
             <p className="text-lg text-charcoal-600 leading-relaxed mb-6">
-              With over 8 years of experience as a registered dietitian, I'm passionate about 
-              helping individuals transform their health through personalized nutrition strategies. 
+              With over 12 years of experience as a registered dietitian in Lebanon, I'm passionate about 
+              helping individuals throughout Beirut and surrounding areas transform their health through personalized nutrition strategies. 
               My approach combines evidence-based science with compassionate care to create 
               sustainable lifestyle changes.
             </p>
             
             <p className="text-lg text-charcoal-600 leading-relaxed mb-8">
-              I specialize in medical nutrition therapy, weight management, sports nutrition, 
-              and pediatric nutrition. Whether you're managing a chronic condition, optimizing 
-              athletic performance, or seeking family wellness solutions, I'm here to guide you 
-              every step of the way.
+              Serving the Lebanese community, I specialize in medical nutrition therapy, weight management, sports nutrition, 
+              and pediatric nutrition. Whether you're in Beirut, Mount Lebanon, or surrounding areas, and managing a chronic condition, optimizing 
+              athletic performance, or seeking family wellness solutions, I'm here to guide you every step of the way.
             </p>
 
             {/* Credentials */}
@@ -56,7 +55,7 @@ export function AboutPreview() {
               variant="outline"
               className="inline-flex items-center group"
             >
-              Learn More About My Approach
+              Learn More About Lebanon's Top Dietitian
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
