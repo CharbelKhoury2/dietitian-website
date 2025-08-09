@@ -80,15 +80,17 @@ export function About() {
       <section className="py-16 lg:py-24 bg-gradient-to-br from-emerald-50 via-sky-50 to-rose-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
-            <img
-              src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
-              alt="Myriam, Registered Dietitian"
-              className="w-48 h-48 rounded-full mx-auto object-cover shadow-xl border-4 border-white"
-              loading="lazy"
-              decoding="async"
-              width="192"
-              height="192"
-            />
+            <div className="w-48 h-48 rounded-full mx-auto overflow-hidden shadow-xl border-4 border-white">
+              <img
+                src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
+                alt="Myriam, Registered Dietitian"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width="192"
+                height="192"
+              />
+            </div>
           </div>
           
           <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-slate-900 mb-6">

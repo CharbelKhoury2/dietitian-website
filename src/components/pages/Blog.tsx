@@ -247,15 +247,17 @@ export function Blog() {
               >
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                   <div className="relative">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-48 object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      width="800"
-                      height="400"
-                    />
+                    <div className="aspect-[2/1] w-full">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="800"
+                        height="400"
+                      />
+                    </div>
                     <div className="absolute top-4 left-4">
                       <span className="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                         {categories.find(cat => cat.id === article.category)?.name}
@@ -309,15 +311,17 @@ export function Blog() {
               >
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                   <div className="relative">
-                    <img
-                      src={video.image}
-                      alt={video.title}
-                      className="w-full h-40 object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      width="600"
-                      height="300"
-                    />
+                    <div className="aspect-[2/1] w-full">
+                      <img
+                        src={video.image}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="300"
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                         <div className="w-0 h-0 border-l-6 border-l-red-600 border-t-3 border-t-transparent border-b-3 border-b-transparent ml-1"></div>

@@ -160,15 +160,17 @@ export function Services() {
                     {/* Image */}
                     <div className={`${isReverse ? 'lg:col-start-2' : ''} animate-fade-in`}>
                       <div className="relative">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
-                          loading="lazy"
-                          decoding="async"
-                          width="600"
-                          height="400"
-                        />
+                        <div className="aspect-[3/2] w-full">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-full h-full object-cover rounded-2xl shadow-lg"
+                            loading="lazy"
+                            decoding="async"
+                            width="600"
+                            height="400"
+                          />
+                        </div>
                         <div className={`absolute inset-0 bg-gradient-to-t ${colors.gradient} opacity-10 rounded-2xl`}></div>
                       </div>
                     </div>

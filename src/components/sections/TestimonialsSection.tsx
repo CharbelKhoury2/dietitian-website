@@ -77,13 +77,17 @@ export function TestimonialsSection() {
 
               {/* Author */}
               <div className="flex items-center">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="48"
+                    height="48"
+                  />
+                </div>
                 <div>
                   <h4 className="font-poppins font-semibold text-charcoal-900">
                     {testimonial.name}

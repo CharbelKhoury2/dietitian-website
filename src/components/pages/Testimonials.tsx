@@ -270,13 +270,17 @@ export function Testimonials() {
             ].map((video, index) => (
               <div key={index} className="relative group cursor-pointer">
                 <div className="relative">
-                  <img
-                    src={video.thumbnail}
-                    alt={video.name}
-                    className="w-full h-64 object-cover rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <div className="aspect-[16/9] w-full">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.name}
+                      className="w-full h-full object-cover rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow"
+                      loading="lazy"
+                      decoding="async"
+                      width="640"
+                      height="360"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-black/20 rounded-2xl group-hover:bg-black/30 transition-colors"></div>
                   
                   {/* Play Button */}
