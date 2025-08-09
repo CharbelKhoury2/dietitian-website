@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Star } from 'lucide-react';
 import { Button } from '../ui/Button';
 
@@ -63,7 +62,6 @@ export function HeroSection() {
             {/* CTA Buttons - Modern styling */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
-                as={Link}
                 to="/book-consultation"
                 size="lg"
                 className="bg-coral-600 text-white px-8 py-4 rounded-full font-poppins font-semibold hover:bg-coral-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
@@ -71,7 +69,6 @@ export function HeroSection() {
                 Book Free Discovery Call →
               </Button>
               <Button
-                as={Link}
                 to="/services"
                 variant="outline"
                 size="lg"
@@ -107,7 +104,7 @@ export function HeroSection() {
                 className="w-full h-auto object-cover"
                 width="1200"
                 height="900"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
                 loading="eager"
               />

@@ -32,9 +32,8 @@ export default defineConfig({
     // Set chunk size warning limit
     chunkSizeWarningLimit: 1000,
   },
-  // Enable compression
   server: {
-    compress: true,
+    // Vite handles compression automatically in production
   },
   // Optimize CSS
   css: {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Award, BookOpen, Users, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
 
@@ -50,7 +49,6 @@ export function AboutPreview() {
             </div>
 
             <Button
-              as={Link}
               to="/about"
               variant="outline"
               className="inline-flex items-center group"

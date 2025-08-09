@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Scale, Stethoscope, Zap, Baby, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
 
@@ -122,7 +121,6 @@ export function ServicesOverview() {
 
                 {/* CTA */}
                 <Button
-                  as={Link}
                   to={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                   variant="outline"
                   className="w-full group"
@@ -145,7 +143,6 @@ export function ServicesOverview() {
               Book a free 15-minute discovery call to discuss your goals and find the perfect fit.
             </p>
             <Button
-              as={Link}
               to="/book-consultation"
               size="lg"
               className="inline-flex items-center"

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, CheckCircle, Send, Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Button } from '../ui/Button';
 import { validateForm, commonRules, sanitize, rateLimiter } from '../../utils/security';
 
@@ -123,7 +122,6 @@ export function Contact() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              as={Link}
               to="/book-consultation"
               size="lg"
               className="inline-flex items-center"
@@ -132,7 +130,6 @@ export function Contact() {
               Book Free Discovery Call
             </Button>
             <Button
-              as="a"
               href="tel:+96103345531"
               variant="outline"
               size="lg"

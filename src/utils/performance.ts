@@ -93,11 +93,13 @@ export const measurePerformance = {
   logMemoryUsage: () => {
     if (import.meta.env.DEV && 'memory' in performance) {
       const memory = (performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
-      console.log('💾 Memory Usage:', {
-        used: `${(memory.usedJSHeapSize / 1048576).toFixed(2)} MB`,
-        total: `${(memory.totalJSHeapSize / 1048576).toFixed(2)} MB`,
-        limit: `${(memory.jsHeapSizeLimit / 1048576).toFixed(2)} MB`
-      });
+      if (memory) {
+        console.log('💾 Memory Usage:', {
+          used: `${(memory.usedJSHeapSize / 1048576).toFixed(2)} MB`,
+          total: `${(memory.totalJSHeapSize / 1048576).toFixed(2)} MB`,
+          limit: `${(memory.jsHeapSizeLimit / 1048576).toFixed(2)} MB`
+        });
+      }
     }
   }
 };

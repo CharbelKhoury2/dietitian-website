@@ -31,24 +31,7 @@
   outline-offset: 2px;
 }
 
-/* Skip link specific styles */
-a[href="#main-content"] {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: #6B8E6B;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  z-index: 1000;
-  transition: top 0.3s;
-}
-
-a[href="#main-content"]:focus {
-  top: 6px;
-}
+/* Skip link specific styles - removed conflicting styles, using sr-only approach instead */
 
 /* Improve button focus states */
 button:focus,

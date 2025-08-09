@@ -113,7 +113,6 @@ export function Header() {
               +961 03 345 531
             </a>
             <Button
-              as={Link}
               to="/book-consultation"
               className="flex items-center"
               size="sm"
@@ -170,7 +169,6 @@ export function Header() {
                 +961 03 345 531
               </a>
               <Button
-                as={Link}
                 to="/book-consultation"
                 className="w-full flex items-center justify-center"
                 onClick={() => setIsMenuOpen(false)}

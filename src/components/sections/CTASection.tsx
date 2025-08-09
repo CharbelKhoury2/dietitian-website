@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Calendar, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
 
@@ -39,7 +38,6 @@ export function CTASection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              as={Link}
               to="/book-consultation"
               size="xl"
               className="bg-white text-sage-700 hover:bg-sage-50 shadow-lg hover:shadow-xl group"
@@ -49,7 +47,6 @@ export function CTASection() {
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
-              as="a"
               href="tel:+96103345531"
               variant="outline"
               size="xl"

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Scale, Stethoscope, Zap, Baby, CheckCircle, ArrowRight, Download, ChevronDown, ChevronUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Button } from '../ui/Button';
 
 export function Services() {
@@ -214,7 +213,6 @@ export function Services() {
                       {/* CTA */}
                       <div className="flex flex-col sm:flex-row gap-4">
                         <Button
-                          as={Link}
                           to="/book-consultation"
                           className="flex-1 flex items-center justify-center"
                         >
@@ -309,7 +307,6 @@ export function Services() {
             and find the perfect service for your needs.
           </p>
           <Button
-            as={Link}
             to="/book-consultation"
             size="xl"
             className="bg-white text-sage-700 hover:bg-sage-50"

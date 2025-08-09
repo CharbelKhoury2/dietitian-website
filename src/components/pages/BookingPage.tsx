@@ -349,7 +349,6 @@ export function BookingPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  as="a"
                   href="tel:+96103345531"
                   className="flex items-center justify-center"
                 >
