@@ -1,19 +1,22 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://spiffy-madeleine-b1fbfa.netlify.app/sitemap.xml
-
-# Disallow admin and private areas
+# Disallow admin areas
 Disallow: /admin
-Disallow: /private/
-Disallow: /*.json$
+Disallow: /admin/
 
-# Allow important pages
-Allow: /
+# Allow all other pages
 Allow: /about
 Allow: /services
 Allow: /testimonials
 Allow: /resources
 Allow: /contact
 Allow: /book-consultation
+Allow: /privacy-policy
+Allow: /terms-of-service
+
+# Sitemap location
+Sitemap: https://drmyriam.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

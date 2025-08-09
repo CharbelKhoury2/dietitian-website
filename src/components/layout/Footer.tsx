@@ -34,7 +34,7 @@ export function Footer() {
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
-                <img src="/profile-logo.svg" alt="Dr. Myriam" className="w-full h-full object-cover" />
+                <img src="/profile-logo.svg" alt="Dr. Myriam" className="w-full h-full object-cover" width={40} height={40} decoding="async" />
               </div>
               <div>
                 <span className="text-xl font-poppins font-bold">Dr. Myriam</span>

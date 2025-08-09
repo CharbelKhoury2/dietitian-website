@@ -84,6 +84,10 @@ export function About() {
               src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
               alt="Myriam, Registered Dietitian"
               className="w-48 h-48 rounded-full mx-auto object-cover shadow-xl border-4 border-white"
+              loading="lazy"
+              decoding="async"
+              width="192"
+              height="192"
             />
           </div>
           
@@ -306,6 +310,10 @@ export function About() {
                 src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
                 alt="Myriam hiking in nature"
                 className="w-full h-auto rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800"
               />
             </div>
             

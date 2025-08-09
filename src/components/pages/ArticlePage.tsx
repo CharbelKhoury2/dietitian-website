@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Clock, User, Calendar, Tag, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Clock, User, Calendar } from 'lucide-react';
 import { Button } from '../ui/Button';
 
 export function ArticlePage() {
@@ -477,6 +477,10 @@ export function ArticlePage() {
             src={article.image}
             alt={article.title}
             className="w-full h-64 lg:h-96 object-cover rounded-2xl shadow-lg"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="900"
           />
         </div>
       </section>
@@ -523,6 +527,10 @@ export function ArticlePage() {
                       src={relatedArticle.image}
                       alt={relatedArticle.title}
                       className="w-full h-48 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="200"
                     />
                     <div className="p-6">
                       <div className="mb-3">

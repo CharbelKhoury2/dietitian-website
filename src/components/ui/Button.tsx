@@ -4,17 +4,18 @@ import { Link } from 'react-router-dom';
 interface ButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   loading?: boolean;
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
-  as?: typeof Link | 'button' | 'a';
-  to?: string;
   href?: string;
+  to?: string;
   target?: string;
   rel?: string;
+  'aria-label'?: string;
+  'aria-describedby'?: string;
 }
 
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -27,10 +28,16 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     className = '',
     onClick,
     type = 'button',
-    as: Component = 'button',
+    href,
+    to,
+    target,
+    rel,
+    'aria-label': ariaLabel,
+    'aria-describedby': ariaDescribedBy,
     ...props 
   }, ref) => {
-    const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+    const isDisabled = disabled || loading;
+    const baseClasses = `inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed ${loading ? 'cursor-wait' : ''}`;
     
     const variantClasses = {
       primary: 'bg-gradient-to-r from-sage-500 to-sage-600 hover:from-sage-600 hover:to-sage-700 text-white shadow-sm hover:shadow-md focus:ring-sage-500',
@@ -48,52 +55,63 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     
     const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
-    const buttonContent = (
-      <>
-        {loading && (
-          <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-        )}
-        {children}
-      </>
+    const loadingSpinner = loading && (
+      <svg className="animate-spin -ml-1 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
     );
 
-    if (Component === Link) {
+    // Render as React Router Link
+    if (to) {
       return (
         <Link
-          ref={ref as any}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          to={to}
           className={combinedClasses}
-          {...props}
+          aria-label={ariaLabel}
+          aria-describedby={ariaDescribedBy}
+          {...(props as Record<string, unknown>)}
         >
-          {buttonContent}
+          {loadingSpinner}
+          {children}
         </Link>
       );
     }
 
-    if (Component === 'a') {
+    // Render as anchor tag
+    if (href) {
       return (
         <a
-          ref={ref as any}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          href={href}
+          target={target}
+          rel={rel}
           className={combinedClasses}
-          {...props}
+          aria-label={ariaLabel}
+          aria-describedby={ariaDescribedBy}
+          {...(props as Record<string, unknown>)}
         >
-          {buttonContent}
+          {loadingSpinner}
+          {children}
         </a>
       );
     }
 
+    // Render as button
     return (
       <button
-        ref={ref as any}
+        ref={ref as React.Ref<HTMLButtonElement>}
         type={type}
         className={combinedClasses}
-        disabled={disabled || loading}
+        disabled={isDisabled}
         onClick={onClick}
-        {...props}
+        aria-label={ariaLabel}
+        aria-describedby={ariaDescribedBy}
+        {...(props as Record<string, unknown>)}
       >
-        {buttonContent}
+        {loadingSpinner}
+        {children}
       </button>
     );
   }

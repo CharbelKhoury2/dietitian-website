@@ -165,6 +165,10 @@ export function Services() {
                           src={service.image}
                           alt={service.title}
                           className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
+                          loading="lazy"
+                          decoding="async"
+                          width="600"
+                          height="400"
                         />
                         <div className={`absolute inset-0 bg-gradient-to-t ${colors.gradient} opacity-10 rounded-2xl`}></div>
                       </div>

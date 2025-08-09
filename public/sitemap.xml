@@ -1,57 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- About Page -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/about</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/about</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Services Page -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/services</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/services</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Testimonials Page -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/testimonials</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/testimonials</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Resources/Blog Page -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/resources</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/resources</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
+  <!-- Contact Page -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/contact</loc>
-    <lastmod>2024-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/book-consultation</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/contact</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Book Consultation Page -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/privacy-policy</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/book-consultation</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://drmyriam.com/privacy-policy</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- Terms of Service -->
   <url>
-    <loc>https://spiffy-madeleine-b1fbfa.netlify.app/terms-of-service</loc>
-    <lastmod>2024-01-25</lastmod>
+    <loc>https://drmyriam.com/terms-of-service</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- Individual Blog Articles -->
+  <url>
+    <loc>https://drmyriam.com/resources/mediterranean-diet-guide</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://drmyriam.com/resources/meal-prep-beginners</loc>
+    <lastmod>2024-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://drmyriam.com/resources/diabetes-nutrition-management</loc>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://drmyriam.com/resources/heart-healthy-eating</loc>
+    <lastmod>2024-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://drmyriam.com/resources/weight-loss-myths</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://drmyriam.com/resources/sports-nutrition-guide</loc>
+    <lastmod>2023-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

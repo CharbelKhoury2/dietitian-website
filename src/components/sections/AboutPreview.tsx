@@ -65,8 +65,12 @@ export function AboutPreview() {
             <div className="relative">
               <img
                 src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
-                alt="Myriam working with nutrition plans and fresh vegetables"
+                alt="Myriam working"
                 className="w-full h-auto rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="900"
               />
               
               {/* Overlay Card */}

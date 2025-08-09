@@ -169,12 +169,13 @@ export function Blog() {
     }
   ];
 
-  const filteredArticles = articles.filter(article => {
-    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || article.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // Filter articles based on search and category
+  // const filteredArticles = articles.filter(article => {
+  //   const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //                        article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+  //   const matchesCategory = selectedCategory === 'all' || article.category === selectedCategory;
+  //   return matchesSearch && matchesCategory;
+  // });
 
   return (
     <div className="min-h-screen bg-ivory-200">
@@ -239,7 +240,7 @@ export function Blog() {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {articles.filter(article => article.featured && !article.isVideo).slice(0, 2).map((article, index) => (
+            {articles.filter(article => article.featured && !article.isVideo).slice(0, 2).map((article) => (
               <article
                 key={article.id}
                 className="group hover:scale-105 transition-all duration-300"
@@ -250,6 +251,10 @@ export function Blog() {
                       src={article.image}
                       alt={article.title}
                       className="w-full h-48 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width="800"
+                      height="400"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-medium">
@@ -297,7 +302,7 @@ export function Blog() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {articles.filter(article => article.featured && article.isVideo).map((video, index) => (
+            {articles.filter(article => article.featured && article.isVideo).map((video) => (
               <article
                 key={video.id}
                 className="group hover:scale-105 transition-all duration-300"
@@ -308,6 +313,10 @@ export function Blog() {
                       src={video.image}
                       alt={video.title}
                       className="w-full h-40 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="300"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">

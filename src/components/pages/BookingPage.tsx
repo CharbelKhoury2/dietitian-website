@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, Video, MapPin, CheckCircle, ArrowRight, Phone } from 'lucide-react';
+import { Clock, Video, MapPin, CheckCircle, ArrowRight, Phone } from 'lucide-react';
 import { Button } from '../ui/Button';
 
 export function BookingPage() {

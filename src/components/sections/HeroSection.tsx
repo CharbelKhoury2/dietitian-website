@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Award, Users, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { Button } from '../ui/Button';
 
 export function HeroSection() {
@@ -105,6 +105,10 @@ export function HeroSection() {
                 src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
                 alt="Modern nutrition consultation"
                 className="w-full h-auto object-cover"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-coral-900/20 to-transparent"></div>

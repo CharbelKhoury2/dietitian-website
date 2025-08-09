@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, CheckCircle, Send, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/Button';
+import { validateForm, commonRules, sanitize, rateLimiter } from '../../utils/security';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ export function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -24,11 +26,47 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Rate limiting check
+    if (!rateLimiter.isAllowed('contact-form', 3, 60000)) {
+      setErrors({ general: 'Too many attempts. Please wait a minute before trying again.' });
+      return;
+    }
+    
+    // Validate form
+    const validationRules = {
+      name: [commonRules.required(), commonRules.name(), commonRules.minLength(2)],
+      email: [commonRules.required(), commonRules.email()],
+      phone: [commonRules.required(), commonRules.phone()],
+      service: [commonRules.required()],
+      message: [commonRules.required(), commonRules.minLength(10), commonRules.maxLength(1000)]
+    };
+    
+    const validation = validateForm(formData, validationRules);
+    
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+    
+    setErrors({});
     setIsSubmitting(true);
+    
+    // Sanitize form data
+    const sanitizedData = {
+      name: sanitize.text(formData.name),
+      email: sanitize.email(formData.email),
+      phone: sanitize.phone(formData.phone),
+      service: sanitize.text(formData.service),
+      message: sanitize.text(formData.message),
+      preferredContact: formData.preferredContact,
+      bestTime: formData.bestTime
+    };
     
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
     
+    console.log('Form submitted:', sanitizedData);
     setIsSubmitting(false);
     setIsSubmitted(true);
   };
@@ -163,8 +201,16 @@ export function Contact() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none"
+                        className={`w-full px-4 py-3 border rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none ${
+                          errors.name ? 'border-red-300 bg-red-50' : 'border-sage-200'
+                        }`}
+                        aria-describedby="name-required"
+                        autoComplete="name"
+                        aria-invalid={!!errors.name}
                       />
+                      {errors.name && (
+                        <p className="mt-1 text-sm text-red-600" role="alert">{errors.name}</p>
+                      )}
                     </div>
                     
                     <div>
@@ -178,8 +224,16 @@ export function Contact() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none"
+                        className={`w-full px-4 py-3 border rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none ${
+                          errors.email ? 'border-red-300 bg-red-50' : 'border-sage-200'
+                        }`}
+                        aria-describedby="email-required"
+                        autoComplete="email"
+                        aria-invalid={!!errors.email}
                       />
+                      {errors.email && (
+                        <p className="mt-1 text-sm text-red-600" role="alert">{errors.email}</p>
+                      )}
                     </div>
                   </div>
 
@@ -194,8 +248,16 @@ export function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none"
+                        className={`w-full px-4 py-3 border rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none ${
+                          errors.phone ? 'border-red-300 bg-red-50' : 'border-sage-200'
+                        }`}
+                        autoComplete="tel"
+                        aria-describedby="phone-optional"
+                        aria-invalid={!!errors.phone}
                       />
+                      {errors.phone && (
+                        <p className="mt-1 text-sm text-red-600" role="alert">{errors.phone}</p>
+                      )}
                     </div>
                     
                     <div>
@@ -207,7 +269,10 @@ export function Contact() {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none"
+                        className={`w-full px-4 py-3 border rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none ${
+                          errors.service ? 'border-red-300 bg-red-50' : 'border-sage-200'
+                        }`}
+                        aria-invalid={!!errors.service}
                       >
                         <option value="">Select a service</option>
                         {services.map((service) => (
@@ -216,6 +281,9 @@ export function Contact() {
                           </option>
                         ))}
                       </select>
+                      {errors.service && (
+                        <p className="mt-1 text-sm text-red-600" role="alert">{errors.service}</p>
+                      )}
                     </div>
                   </div>
 
@@ -231,16 +299,26 @@ export function Contact() {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Tell me about your health goals, any specific concerns, or questions you have..."
-                      className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none"
+                      className={`w-full px-4 py-3 border rounded-lg focus:border-sage-500 focus:ring-2 focus:ring-sage-200 focus:outline-none ${
+                        errors.message ? 'border-red-300 bg-red-50' : 'border-sage-200'
+                      }`}
+                      aria-invalid={!!errors.message}
+                      maxLength={1000}
                     />
+                    {errors.message && (
+                      <p className="mt-1 text-sm text-red-600" role="alert">{errors.message}</p>
+                    )}
+                    <p className="mt-1 text-sm text-charcoal-500">
+                      {formData.message.length}/1000 characters
+                    </p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-charcoal-700 mb-2">
+                    <fieldset>
+                      <legend className="block text-sm font-medium text-charcoal-700 mb-2">
                         Preferred Contact Method
-                      </label>
-                      <div className="space-y-2">
+                      </legend>
+                      <div className="space-y-2" role="radiogroup" aria-labelledby="contact-method-legend">
                         <label className="flex items-center">
                           <input
                             type="radio"
@@ -249,6 +327,7 @@ export function Contact() {
                             checked={formData.preferredContact === 'email'}
                             onChange={handleInputChange}
                             className="text-sage-600 focus:ring-sage-500"
+                            aria-describedby="email-contact-desc"
                           />
                           <span className="ml-2 text-charcoal-700">Email</span>
                         </label>
@@ -260,11 +339,12 @@ export function Contact() {
                             checked={formData.preferredContact === 'phone'}
                             onChange={handleInputChange}
                             className="text-sage-600 focus:ring-sage-500"
+                            aria-describedby="phone-contact-desc"
                           />
                           <span className="ml-2 text-charcoal-700">Phone</span>
                         </label>
                       </div>
-                    </div>
+                    </fieldset>
                     
                     <div>
                       <label htmlFor="bestTime" className="block text-sm font-medium text-charcoal-700 mb-2">
@@ -286,14 +366,21 @@ export function Contact() {
                     </div>
                   </div>
 
+                  {errors.general && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-600 text-sm" role="alert">{errors.general}</p>
+                    </div>
+                  )}
+                  
                   <Button
                     type="submit"
                     loading={isSubmitting}
                     size="lg"
                     className="w-full md:w-auto"
+                    disabled={isSubmitting}
                   >
                     <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
 
                   <p className="text-sm text-charcoal-500">

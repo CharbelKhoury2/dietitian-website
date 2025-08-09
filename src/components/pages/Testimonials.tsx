@@ -138,6 +138,10 @@ export function Testimonials() {
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
+                        loading="lazy"
+                        decoding="async"
+                        width="1200"
+                        height="900"
                       />
                       
                       {/* Result Badge */}
@@ -270,6 +274,8 @@ export function Testimonials() {
                     src={video.thumbnail}
                     alt={video.name}
                     className="w-full h-64 object-cover rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-black/20 rounded-2xl group-hover:bg-black/30 transition-colors"></div>
                   

@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6B8E6B" />
+    <link rel="canonical" href="https://drmyriam.com" />
     <meta name="description" content="Transform your health with Dr. Myriam, Lebanon's trusted registered dietitian. Personalized nutrition plans, weight management & medical nutrition therapy." />
     <meta name="keywords" content="dietitian Lebanon, registered dietitian Beirut, nutritionist near me, weight loss dietitian, medical nutrition therapy Lebanon" />
     <meta name="author" content="Dr. Myriam - Your No-BS Dietitian" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -20,10 +24,14 @@
     <meta property="twitter:description" content="Transform your health with Dr. Myriam, Lebanon's trusted registered dietitian. Personalized nutrition plans, weight management & medical nutrition therapy." />
     <meta property="twitter:image" content="/og-image.jpg" />
     
-    <!-- Fonts -->
+    <!-- Critical resource hints for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Reduced font weights to minimize transfer size -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Preload hero image to improve LCP on home -->
+    <link rel="preload" as="image" href="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg" imagesrcset="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg 1200w" imagesizes="(max-width: 1024px) 100vw, 50vw">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -99,6 +107,8 @@
     <title>Dr. Myriam - Best Dietitian in Lebanon | Registered Nutritionist</title>
   </head>
   <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-sage-600 text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
