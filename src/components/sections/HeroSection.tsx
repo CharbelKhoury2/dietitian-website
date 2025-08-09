@@ -98,11 +98,11 @@ export function HeroSection() {
           {/* Right Column - Modern Image */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <div className="aspect-[4/3] w-full">
+              <div className="aspect-[3/2] w-full">
                 <img
                   src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
                   alt="Modern nutrition consultation"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   width="1200"
                   height="900"
                   decoding="async"
