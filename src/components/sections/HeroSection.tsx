@@ -104,7 +104,7 @@ export function HeroSection() {
                 className="w-full h-auto object-cover"
                 width="1200"
                 height="900"
-                fetchPriority="high"
+
                 decoding="async"
                 loading="eager"
               />
